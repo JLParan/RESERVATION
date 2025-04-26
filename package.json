@@ -1,0 +1,24 @@
+{
+  "name": "reservation",
+  "version": "1.0.0",
+  "main": "reservation.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JLParan/RESERVATION.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JLParan/RESERVATION/issues"
+  },
+  "homepage": "https://github.com/JLParan/RESERVATION#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "sqlite3": "^5.1.7"
+  },
+  "description": ""
+}
