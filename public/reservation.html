@@ -3,191 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Save UR Space Home</title>
+    <title>Save UR Space Reservation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="reservation.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
-<body>
+<body class="bg-gray-100 font-sans antialiased">
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
     <header>
         <nav>
             <ul>
-                <li><a href="/home.html">Home</a></li>
+                <li><a href="/public/home.html">Home</a></li>
                 <li><a href="/about.html">About Us</a></li>
 
             <li>
                 <div = class="logo-container">
-                    <img src="images/logo.png"alt="QCU Logo">
+                    <img src="/images/logo.png"alt="QCU Logo">
                 </div>
             </li>
                 <li><a href="/services.html">Our Services</a></li>
                 <li><a href="/contact.html">Contact Us</a></li>
             </ul>
         </nav>
-        <h1>Collaborative Room Reservation Form</h1>
     </header>
 
-    <section class="availability">
-        <div class="room-hours">
-            <h3>Collaborative Room Operating Hours</h3>
-            <p>Monday - Saturday: 7:00 AM - 9:00 PM</p>
-            <p class="note">Please check the availability below and make your reservations accordingly.</p>
+<section class="container">
+    <div class="container-content">
+        <h1>Collaborative Room Reservation Form</h1>
+        <section class="availability">
+            <div class="room-hours">
+                <h3>
+                    <span style="display: inline-block; width: 20px; height: 20px; background-image: url('images/info-circle.png'); background-size: contain; vertical-align: middle; margin-right: 3px;"></span> Collaborative Room Operating Hours </h3>
+                <p><b>Monday - Saturday: </b> 7:00 AM - 9:00 PM</p>
+                <p class="note">Please check the availability below and make your reservations accordingly.</p>
+            </div>
+        </section>
+
+        <section class="calendar">
+                <div class="calendar-container">
+                    <div class="month-navigation">
+                        <button id="prev-month">❮</button>
+                        <h2 id="month-name">May 2025</h2>
+                        <button id="next-month">❯</button>
+                    </div>
+        
+                    <div class="days-of-week">
+                        <div>SUN</div>
+                        <div>MON</div>
+                        <div>TUE</div>
+                        <div>WED</div>
+                        <div>THU</div>
+                        <div>FRI</div>
+                        <div>SAT</div>
+                    </div>
+                    <div class="days-grid" id="days-grid">
+                        </div>
+                    <div class="legend">
+                        <div class="legend-item legend-available">
+                            <div class="legend-color"></div>
+                            <div>Available</div>
+                        </div>
+                        <div class="legend-item legend-reservation">
+                            <div class="legend-color"></div>
+                            <div>Your Reservation</div>
+                        </div>
+                        <div class="legend-item legend-reserved">
+                            <div class="legend-color"></div>
+                            <div>Reserved</div>
+                        </div>
+                        <div class="legend-item legend-past">
+                            <div class="legend-color"></div>
+                            <div>Past Dates</div>
+                        </div>
+                    </div>
+                </div>
+                
+        <div id="selected-date-container">
+            <b>Selected Date: </b><span id="selected-date-text"></span> <br>
+            <span style="display: inline-block; width: 20px; height: 20px; background-image: url('images/info-circle.png'); background-size: contain; vertical-align: middle; margin-right: 3px;"></span> Please be advised that your reservation will be held for 15 minutes from the scheduled time. If you do not arrive within this timeframe, your reservation will be automatically voided. </h3>
         </div>
-   
-        <div class="calendar">
-            <div class="calendar-header">
-                <button>&lt;</button>
-                <h2>May 2025</h2>
-                <button>&gt;</button>
-            </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>SUN</th>
-                        <th>MON</th>
-                        <th>TUE</th>
-                        <th>WED</th>
-                        <th>THU</th>
-                        <th>FRI</th>
-                        <th>SAT</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
-                    <tr><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr>
-                    <tr><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td></tr>
-                    <tr><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td></tr>
-                    <tr><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td></tr>
-                </tbody>
-            </table>
-            <div class="legend">
-                <div class="available"></div> <span>Available</span>
-                <div class="unavailable"></div> <span>Unavailable</span>
-                <div class="selected"></div> <span>Selected</span>
-            </div>
-        </div>
-    </section>
 
-    <section class="reservation-details">
-        <h2>Reservation Details</h2>
-        <p class="instructions">Please fill out the reservation form below. All fields marked with an asterisk (*) are mandatory. You can select multiple time slots for your reservation.</p>
-        <form id="reservationForm">
-            <div class="form-group">
-                <label for="name">Name*:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="studentId">Student ID:</label>
-                <input type="text" id="studentId" name="studentId">
-            </div>
-            <div class="form-group">
-                <label for="room">Select a Room*:</label>
-                <select id="room" name="room" required>
-                    <option value="">-- Select Room --</option>
-                    <option value="room1">Room 1</option>
-                    <option value="room2">Room 2</option>
-                    </select>
-            </div>
+    <h1 class="reservation">Reservation Details</h1>
 
-            <h3>Room Availability</h3>
-            <div class="room-availability-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>07:00</th>
-                            <th>08:00</th>
-                            <th>09:00</th>
-                            <th>10:00</th>
-                            <th>11:00</th>
-                            <th>12:00</th>
-                            <th>13:00</th>
-                            <th>14:00</th>
-                            <th>15:00</th>
-                            <th>16:00</th>
-                            <th>17:00</th>
-                            <th>18:00</th>
-                            <th>19:00</th>
-                            <th>20:00</th>
-                            <th>21:00</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>Room 1</th>
-                            <td class="available-slot" data-time="07:00" data-room="room1"></td>
-                            <td class="available-slot" data-time="08:00" data-room="room1"></td>
-                            <td class="unavailable-slot" data-time="09:00" data-room="room1"></td>
-                            <td class="unavailable-slot" data-time="10:00" data-room="room1"></td>
-                            <td class="available-slot" data-time="11:00" data-room="room1"></td>
-                            <td class="available-slot" data-time="12:00" data-room="room1"></td>
-                            <td class="available-slot" data-time="13:00" data-room="room1"></td>
-                            <td class="unavailable-slot" data-time="14:00" data-room="room1"></td>
-                            <td class="available-slot" data-time="15:00" data-room="room1"></td>
-                            <td class="available-slot" data-time="16:00" data-room="room1"></td>
-                            <td class="available-slot" data-time="17:00" data-room="room1"></td>
-                            <td class="available-slot" data-time="18:00" data-room="room1"></td>
-                            <td class="available-slot" data-time="19:00" data-room="room1"></td>
-                            <td class="available-slot" data-time="20:00" data-room="room1"></td>
-                            <td class="available-slot" data-time="21:00" data-room="room1"></td>
-                        </tr>
-                        <tr>
-                            <th>Room 2</th>
-                            <td class="available-slot" data-time="07:00" data-room="room2"></td>
-                            <td class="available-slot" data-time="08:00" data-room="room2"></td>
-                            <td class="available-slot" data-time="09:00" data-room="room2"></td>
-                            <td class="available-slot" data-time="10:00" data-room="room2"></td>
-                            <td class="unavailable-slot" data-time="11:00" data-room="room2"></td>
-                            <td class="unavailable-slot" data-time="12:00" data-room="room2"></td>
-                            <td class="available-slot" data-time="13:00" data-room="room2"></td>
-                            <td class="available-slot" data-time="14:00" data-room="room2"></td>
-                            <td class="unavailable-slot" data-time="15:00" data-room="room2"></td>
-                            <td class="available-slot" data-time="16:00" data-room="room2"></td>
-                            <td class="available-slot" data-time="17:00" data-room="room2"></td>
-                            <td class="available-slot" data-time="18:00" data-room="room2"></td>
-                            <td class="unavailable-slot" data-time="19:00" data-room="room2"></td>
-                            <td class="available-slot" data-time="20:00" data-room="room2"></td>
-                            <td class="available-slot" data-time="21:00" data-room="room2"></td>
-                        </tr>
-                        </tbody>
-                </table>
-            </div>
+            <form id="student-form">
+                <div class="form-group">
+                    <label for="name" class="custom-label">Name</label>
+                    <input type="text" id="name" name="name" class="custom-input" placeholder="Enter name">
+                    <p id="name-error" class="error-message"></p>
+                </div>
+                <div class="form-group">
+                    <label for="student-id" class="custom-label">Student ID</label>
+                    <input type="text" id="student-id" name="student-id" class="custom-input" placeholder="Enter student ID">
+                    <p id="student-id-error" class="error-message"></p>
+                </div>
+                <div id="new-fields-container">
+                    </div>
+                <button type="submit" class="custom-button w-full">Add a Student +</button>
+            </form>
 
-            <div class="form-group">
-                <label for="reservationTime">Reservation Start Time*:</label>
-                <input type="text" id="reservationTime" name="reservationTime" placeholder="Select from availability table" readonly required>
-            </div>
-            <div class="form-group">
-                <label for="duration">Reservation and time:</label>
-                <input type="text" id="duration" name="duration" readonly>
-            </div>
-            <div class="form-group">
-                <label for="participants">Number of Participants:</label>
-                <input type="number" id="participants" name="participants">
-            </div>
-            <div class="form-group">
-                <label for="reason">Reason for Reservation:</label>
-                <textarea id="reason" name="reason"></textarea>
-            </div>
-        </form>
-    </section>
+                <div class="select-group">
+                    <label for="room-select" class="select-label">Select a Room</label>
+                    <div class="custom-select-wrapper" tabindex="0">
+                        <div class="custom-select-trigger">
+                            <span>-- Select a Room --</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                        </div>
+                        <div class="custom-options">
+                            <select id="room-select">
+                                <option value="" disabled selected>-- Select a Room --</option>
+                                <option value="room1">Room 1</option>
+                                <option value="room2">Room 2</option>
+                                <option value="room3">Room 3</option>
+                                <option value="room4">Room 4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <p class="description">Select a collab room to be reserved. Each room can only be assigned to one group at a time.</p>
+                </div>
 
-    <section class="guidelines">
-        <h2>Collaborative Room Guidelines</h2>
-        <ol>
-            <li>Reservations must be made at least one (1) day in advance.</li>
-            <li>Maximum reservation time is two (2) hours per group/reservation daily. Extension will be subject to room availability.</li>
-            <li>Please ensure that the room is clean and organized after use. Any damage or loss of equipment should be reported immediately.</li>
-            <li>Food and drinks are not allowed inside the collaborative rooms.</li>
-            <li>Be considerate of other users. Keep noise levels down.</li>
-        </ol>
-    </section>
+    </div>
+</section>
 
-    <footer>
-        <button type="reset" form="reservationForm">Clear</button>
-        <button type="submit" form="reservationForm">Submit &rarr;</button>
-    </footer>
-</div>
 
-<script src="reservation.html"></script>
+<script src="reservation.js"></script>
 </body>
 </html>
     

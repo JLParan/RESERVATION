@@ -1,9 +1,7 @@
-/*unfinished. need to polish*/
 body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('images/bg.png');
     background-size: cover;
     background-repeat: no-repeat;
     }
@@ -22,7 +20,7 @@ nav ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8rem;
+    gap: 10rem;
     font-size: large;
     }
     
@@ -39,184 +37,363 @@ nav ul li a {
 .logo-container img {
     max-height: 50px;
     }
-    
-.availability, .reservation-details, .guidelines {
-    margin-bottom: 30px;
+
+h1{
+    margin-left: 30px;
+    padding: 10px;
+    font-size:large;
+    font-weight: bold;
+}
+
+.container-content{
+    background-color: white;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.availability{
+    margin-left: 30px;
+    margin-right: 30px;
     padding: 15px;
-    border: 1px solid #ddd;
+    border: 2px solid #A7CAFF;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: #E5EFFF;
+    font-size: small;
+
 }
 
-.room-hours {
-    margin-bottom: 15px;
+h3{
+    font-weight: bold;
 }
 
-.calendar {
-    text-align: center;
+.calendar-container {
+    margin: 30px;
+    background-color: #f9fafb; 
+    border-radius: 5px; 
+    padding: 15px;      
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1); /* Shadow for depth */
 }
 
-.calendar-header {
+.month-navigation {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 }
 
-.calendar-header button {
-    padding: 8px 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    cursor: pointer;
-    background-color: #eee;
+.month-navigation button{
+    padding: 0.25rem 0.75rem; 
+    border-radius: 0.375rem; 
+    background-color: #e5e7eb; 
+    color: #4b5563; 
+    cursor: pointer;        
+    transition: background-color 0.3s ease; 
+    font-size: 0.875rem; 
+    border: 1px solid #d1d5db;
 }
 
-.calendar-header h2 {
+.month-navigation button:hover {
+    background-color: #d1d5db; 
+}
+
+.month-navigation h2 {
+    font-size: large;      
+    font-weight: 700;         
+    color: #374151;         
     margin: 0;
 }
 
-.calendar table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.calendar th, .calendar td {
-    border: 1px solid #eee;
-    padding: 10px;
+.days-of-week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); 
+    margin-bottom: 0.5rem;
+    font-size: medium;      
+    font-weight: 600;         
+    color: #7B827E;         
     text-align: center;
 }
 
-.calendar th {
-    background-color: #f0f0f0;
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); 
+    gap: 0.50rem;
 }
 
-.calendar td {
-    cursor: pointer;
+.day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem; 
+    padding: 1rem;          
+    text-align: center;
+    cursor: pointer;          
+    transition: background-color 0.3s ease; 
+    font-size: medium;
+    font-weight: 700;
+    border: 1px solid transparent; 
 }
 
-.calendar td.available {
-    background-color: #d4edda;
-    color: #155724;
+.day:hover {
+    background-color: #f0f0f0; 
+    border-color: #d1d5db;  
 }
 
-.calendar td.unavailable {
-    background-color: #f8d7da;
-    color: #721c24;
+.day.available {
+    background-color: #e0f2fe; 
+    color: #0369a1;        
+}
+.day.available:hover{
+  background-color: #b0e0fe;
 }
 
-.calendar td.selected {
-    background-color: #cce5ff;
-    color: #004085;
+.day.reserved {
+    background-color: #fecaca; 
+    color: #b91c1c;        
+}
+
+.day.your-reservation {
+    background-color: #fef08a; 
+    color: #854d0e;
+}
+
+.day.past {
+    background-color: #d1d5db; 
+    color: #6b7280;        
+    cursor: not-allowed;    
+}
+.day.selected{
+   background-color: #60a5fa; 
+   color: #fff;
 }
 
 .legend {
-    margin-top: 10px;
     display: flex;
-    gap: 10px;
-    justify-content: center;
+    justify-content: space-around;
+    margin-top: 1rem;
+    font-size: 0.90rem;
+    font-weight: 500;
+    color: #4b5563;
 }
 
-.legend div {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
+.legend-item {
+    display: flex;
+    align-items: center;
 }
 
-.legend .available { background-color: #d4edda; }
-.legend .unavailable { background-color: #f8d7da; }
-.legend .selected { background-color: #cce5ff; }
-
-.reservation-details h2, .guidelines h2 {
-    margin-top: 0;
-    margin-bottom: 15px;
+.legend-color {
+    width: 0.90rem;
+    height: 0.90rem;
+    border-radius: 0.375rem;
+    margin-right: 0.25rem;
 }
 
-.form-group {
-    margin-bottom: 15px;
+.legend-available .legend-color {
+    background-color: #e0f2fe;
+}
+.legend-reservation .legend-color{
+     background-color: #fef08a;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
+.legend-reserved .legend-color {
+    background-color: #fecaca;
+}
+
+.legend-past .legend-color {
+    background-color: #d1d5db;
+}
+
+#selected-date-container {
+    margin: 30px;
+    padding: 15px;
+    border: 2px solid #A7CAFF;
+    border-radius: 5px;
+    background-color: #E5EFFF;
+    text-align: justify;
+    font-size: small;
+}
+
+.reservation{
+    margin: 30px;
+    font-size:large;
     font-weight: bold;
 }
 
-.form-group input[type="text"],
-.form-group input[type="number"],
-.form-group select,
-.form-group textarea {
-    width: calc(100% - 12px);
+#student-form {
+    background-color: #F1F6FF;
+    padding: 15px;
+    border-radius: 8px;
+    border-color: #C1DAFF;
+    margin: 30px;
+  }
+  
+.form-group {
+    margin-bottom: 15px;
+    border-color: #808080;
+  }
+  
+.custom-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: small;
+    color: #333;
+  }
+  
+.custom-input {
+    width: calc(100% - 12px); 
     padding: 8px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
+    font-size: small;
     box-sizing: border-box;
+  }
+  
+.custom-input:focus {
+    outline: none;
+    border-color: #deeeff; 
+    box-shadow: 0 0 5px; 
+  }
+  
+.error-message {
+    color: #dc3545; 
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+.custom-button {
+    background-color: #386EC2;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: small;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+.custom-button:hover {
+    background-color: #7fa0d7;
+  }
+  
+.w-full {
+    width: 150px; 
+  }
+  
+#new-fields-container {
+    margin-bottom: 20px; 
+  }
+
+.select-group {
+    margin: 30px;
+    margin-bottom: 20px; 
 }
 
-.form-group textarea {
-    resize: vertical;
-    min-height: 80px;
+.select-label {
+    display: block;
+    margin-bottom: 8px; 
+    font-size: small; 
+    font-weight: bold; 
+    color: #6b7280; 
 }
 
-.room-availability-table {
-    overflow-x: auto;
-    margin-bottom: 15px;
+.custom-select-wrapper {
+    position: relative;
+    user-select: none;
+    flex-grow: 1;
 }
 
-.room-availability-table table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.room-availability-table th,
-.room-availability-table td {
-    border: 1px solid #eee;
+.custom-select-trigger {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 8px;
-    text-align: center;
+    font-size: small; 
+    line-height: 1.5rem; 
+    background-color: #fff; 
+    border-width: 1px; 
+    border-color: #d1d5db; 
+    border-radius: 0.375rem; 
+    color: #4b5563; 
+    cursor: pointer;
+    transition: border-color 0.15s ease-in-out, shadow-sm 0.15s ease-in-out;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.custom-select-trigger:hover,
+.custom-select-wrapper:focus-within .custom-select-trigger {
+    border-color: #3b82f6; 
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2); 
+    outline: none;
+}
+
+.custom-select-trigger span {
+    margin-right: 0.5rem; 
+}
+
+.custom-select-trigger svg {
+    height: 1.25rem; 
+    width: 1.25rem; 
+    fill: currentColor;
+    color: #6b7280;
+}
+
+.custom-options {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: 20;
+    background-color: #fff; 
+    border-width: 1px; 
+    border-color: #d1d5db; 
+    border-radius: 0.375rem; 
+    margin-top: 0.25rem; 
+    overflow: auto;
+    max-height: 200px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); 
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.15s ease-in-out, visibility 0.15s ease-in-out, transform 0.15s ease-in-out;
+}
+
+.custom-select-wrapper.open .custom-options {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.custom-options li {
+    padding: 0.75rem 1rem; 
+    font-size: 1rem; 
+    line-height: 1.5rem; 
+    color: #4b5563; 
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
     white-space: nowrap;
 }
 
-.room-availability-table th {
-    background-color: #f0f0f0;
+.custom-options li:hover,
+.custom-options li.selected {
+    background-color: #f7fafc; 
+    color: #1e293b; 
 }
 
-.room-availability-table td.available-slot {
-    background-color: #e6ffe6;
+.custom-select-wrapper select {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
     cursor: pointer;
 }
 
-.room-availability-table td.unavailable-slot {
-    background-color: #ffe6e6;
-}
-
-.guidelines ol {
-    padding-left: 20px;
-}
-
-footer {
-    text-align: right;
-}
-
-footer button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-left: 10px;
-}
-
-footer button[type="reset"] {
-    background-color: #f0f0f0;
-    color: #333;
-}
-
-footer button[type="submit"] {
-    background-color: #007bff;
-    color: white;
-}
-
-.note {
-    font-size: 0.9em;
-    color: #777;
-    margin-top: 5px;
+.description {
+    font-size: 0.875rem; /* text-sm */
+    color: #6b7280; /* text-gray-500 */
+    margin-top: 0.5rem; /* mt-2 */
+    max-width: 90%;
 }
