@@ -35,6 +35,10 @@ nav ul li a {
     font-weight: bold;
     }
 
+nav ul li a.active {
+        color: red;
+    }
+
 .logo-container img {
     max-height: 50px;
     }

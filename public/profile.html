@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Profile</title>
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/public/home.html">Home</a></li>
+        <li><a href="/about.html">About Us</a></li>
+
+        <li class="logo-container">
+          <img src="/images/logo.png"alt="QCU Logo">
+        </li>
+
+        <li><a href="/services.html">Services</a></li>
+        <li><a class="active" href="/profile.html">Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="profile-section">
+      <div class="profile-info">
+        <h2>My Profile</h2>
+        <img src="https://storage.googleapis.com/a1aa/image/343d1886-5d96-4ff2-132d-44779cac119c.jpg" 
+             alt="Profile Photo">
+        <p class="email">JLoyd@gmail.com</p>
+        <a href="#" class="change-photo">Change photo</a>
+      </div>
+
+      <form class="profile-form">
+        <div class="form-group">
+          <label for="fullname">Full Name:</label>
+          <input type="text" id="fullname" name="fullname" placeholder="Name">
+        </div>
+
+        <div class="form-group">
+          <label for="studentno">Student No. :</label>
+          <input type="text" id="studentno" name="studentno" placeholder="00-0000">
+        </div>
+
+        <div class="form-group">
+          <label for="program">Program:</label>
+          <input type="text" id="program" name="program" placeholder="BSIT, BSIS, BSCS etc.">
+        </div>
+
+        <div class="form-group">
+          <label for="mobile">Mobile Number:</label>
+          <input type="text" id="mobile" name="mobile" placeholder="e.g 09XXXXXXXXX">
+        </div>
+
+        <button type="submit" class="save-button">Save Changes</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Save UR Space. All rights reserved.</p>
+  </footer>
+</body>
+</html>
