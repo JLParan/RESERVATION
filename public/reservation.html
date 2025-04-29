@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Save UR Space Reservation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <link rel="stylesheet" href="reservation.css">
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -17,15 +17,15 @@
     <header>
         <nav>
             <ul>
-                <li><a href="/public/home.html">Home</a></li>
+                <li><a href="/home.html">Home</a></li>
                 <li><a href="/about.html">About Us</a></li>
 
             <li>
                 <div = class="logo-container">
-                    <img src="/images/logo.png"alt="QCU Logo">
+                    <img src="images/logo.png"alt="QCU Logo">
                 </div>
             </li>
-                <li><a href="/services.html">Services</a></li>
+                <li><a href="/services.html">Our Services</a></li>
                 <li><a href="/contact.html">Contact Us</a></li>
             </ul>
         </nav>
@@ -37,7 +37,7 @@
         <section class="availability">
             <div class="room-hours">
                 <h3>
-                    <span style="display: inline-block; width: 20px; height: 20px; background-image: url('/images/info-circle.png'); background-size: contain; vertical-align: middle; margin-right: 3px;"></span> Collaborative Room Operating Hours </h3>
+                    <span style="display: inline-block; width: 20px; height: 20px; background-image: url('images/info-circle.png'); background-size: contain; vertical-align: middle; margin-right: 3px;"></span> Collaborative Room Operating Hours </h3>
                 <p><b>Monday - Saturday: </b> 7:00 AM - 9:00 PM</p>
                 <p class="note">Please check the availability below and make your reservations accordingly.</p>
             </div>
@@ -84,7 +84,7 @@
                 
         <div id="selected-date-container">
             <b>Selected Date: </b><span id="selected-date-text"></span> <br>
-            <span style="display: inline-block; width: 20px; height: 20px; background-image: url('/images/info-circle.png'); background-size: contain; vertical-align: middle; margin-right: 3px;"></span> Please be advised that your reservation will be held for 15 minutes from the scheduled time. If you do not arrive within this timeframe, your reservation will be automatically voided. </h3>
+            <span style="display: inline-block; width: 20px; height: 20px; background-image: url('images/info-circle.png'); background-size: contain; vertical-align: middle; margin-right: 3px;"></span> Please be advised that your reservation will be held for 15 minutes from the scheduled time. If you do not arrive within this timeframe, your reservation will be automatically voided. </h3>
         </div>
 
     <h1 class="reservation">Reservation Details</h1>
@@ -124,108 +124,108 @@
                     </div>
                     <p class="description">Select a collab room to be reserved. Each room can only be assigned to one group at a time.</p>
                 </div>
-
-                
-        <!-- Info box -->
-
-        <div id="selected-date-container">
-            <span style="display: inline-block; width: 20px; height: 20px; background-image: url('/images/info-circle.png'); background-size: contain; vertical-align: middle; margin-right: 3px;"></span> Please select your desired reservation start time. All displayed hours are within the library's operating hours.</h3>
+        <section class="time-selection">
+         <div id="reminder-container">
+            <span style="display: inline-block; width: 20px; height: 20px; background-image: url('images/info-circle.png'); background-size: contain; vertical-align: middle; margin-right: 3px;"></span> Please be advised that your reservation will be held for 15 minutes from the scheduled time. If you do not arrive within this timeframe, your reservation will be automatically voided. </h3>
         </div>
-      
-          <!-- Time slots grid -->
-          <div class="calendar-container">
-            <div>
-            <button type="button" class="time-slot available">7:00</button>
-            <button type="button" class="time-slot available">7:30</button>
-            <button type="button" class="time-slot available">8:00</button>
-            <button type="button" class="time-slot reserved">8:30</button>
-            <button type="button" class="time-slot reserved">9:00</button>
-            <button type="button" class="time-slot reserved">9:30</button>
-            <button type="button" class="time-slot available">10:00</button>
-            <button type="button" class="time-slot available">10:30</button>
-            <button type="button" class="time-slot reserved">11:00</button>
-            <button type="button" class="time-slot available">11:30</button>
-            <button type="button" class="time-slot reserved">12:00</button>
-            <button type="button" class="time-slot selected">12:30</button>
-            <button type="button" class="time-slot available">1:00</button>
-            <button type="button" class="time-slot available">1:30</button>
-            <button type="button" class="time-slot available">2:00</button>
-            <button type="button" class="time-slot available">2:30</button>
-            <button type="button" class="time-slot available">3:00</button>
-            <button type="button" class="time-slot available">3:30</button>
-            <button type="button" class="time-slot available">4:00</button>
-            <button type="button" class="time-slot available">4:30</button>
-            <button type="button" class="time-slot available">5:00</button>
-        </div>
-        
-      
-          <!-- Legend -->
-          <div class="legend">
-            <div class="legend-item legend-available">
-                <div class="legend-color"></div>
-                <div>Available</div>
-            </div>
-            <div class="legend-item legend-reservation">
-                <div class="legend-color"></div>
-                <div>Your Reservation</div>
-            </div>
-            <div class="legend-item legend-reserved">
-                <div class="legend-color"></div>
-                <div>Reserved</div>
-            </div>
-          </div>
-        </div>
+    </section>
 
-          <!-- Reservation Form -->
-          <form class="reservation-info">
+        <div class="reservation-details">
+            <h2>Reservation Details</h2>
             <div class="form-group">
-                <label for="start-time" class="custom-label">Reservation Start Time</label>
-                <input type="text" id="start-time" name="start-time" class="custom-input" placeholder="12:30 PM">
-                <p id="start-time-error" class="error-message"></p>
+                <label for="start-time">Reservation Start Time:</label>
+                <select id="start-time">
+                    <option value="" disabled selected>Select Start Time</option>
+                    <option value="07:00">07:00 AM</option>
+                    <option value="07:30">07:30 AM</option>
+                    <option value="08:00">08:00 AM</option>
+                    <option value="08:30">08:30 AM</option>
+                    <option value="09:00">09:00 AM</option>
+                    <option value="09:30">09:30 AM</option>
+                    <option value="10:00">10:00 AM</option>
+                    <option value="10:30">10:30 AM</option>
+                    <option value="11:00">11:00 AM</option>
+                    <option value="11:30">11:30 AM</option>
+                    <option value="12:00">12:00 PM</option>
+                    <option value="12:30">12:30 PM</option>
+                    <option value="13:00">01:00 PM</option>
+                    <option value="13:30">01:30 PM</option>
+                    <option value="14:00">02:00 PM</option>
+                    <option value="14:30">02:30 PM</option>
+                    <option value="15:00">03:00 PM</option>
+                    <option value="15:30">03:30 PM</option>
+                    <option value="16:00">04:00 PM</option>
+                    <option value="16:30">04:30 PM</option>
+                    <option value="17:00">05:00 PM</option>
+                    <option value="17:30">05:30 PM</option>
+                    <option value="18:00">06:00 PM</option>
+                    <option value="18:30">06:30 PM</option>
+                    <option value="19:00">07:00 PM</option>
+                    <option value="19:30">07:30 PM</option>
+                    <option value="20:00">08:00 PM</option>
+                    <option value="20:30">08:30 PM</option>
+                    <option value="21:00">09:00 PM</option>
+                </select>
             </div>
             <div class="form-group">
-                <label for="end-time" class="custom-label">Reservation End Time:</label>
-                <input type="text" id="end-time" name="end-time" class="custom-input" placeholder="1:30 PM">
-                <p id="end-time-error" class="error-message"></p>
+                <label for="end-time">Reservation End Time:</label>
+                <input type="text" id="end-time" value="" readonly>
             </div>
-                <div class="form-group">
-                    <label for="participants" class="custom-label">Number of Participants:</label>
-                    <input type="text" id="participants" name="participants" class="custom-input" placeholder="5">
-                    <p id="participants-error" class="error-message"></p>
-                </div>
-                <div class="form-group">
-                    <label for="reason" class="custom-label">Reason for Reservation:</label>
-                    <input type="text" id="reason" name="reason" class="custom-input" placeholder="Mock Defense">
-                    <p id="reason-error" class="error-message"></p>
-                </div>
-            <div id="new-fields-container">
-                </div>
-        </form>
-      
-          <!-- Guidelines -->
-          <div id="selected-date-container">
-            <span style="display: inline-block; width: 20px; height: 20px; background-image: url('/images/info-circle.png'); background-size: contain; vertical-align: middle; margin-right: 3px;"></span>
-            For Collab Room Reservation please READ the guidelines.</h3>
-            <p>1. Collaboration rooms may be reserved one day in advance. Same-day reservations are automatically cancelled.</p>
-            <p>2. If a group does not claim a reservation within 15 minutes of the scheduled time, it will be forfeited.</p>
-            <p>3. Collab Rooms may be reserved for a maximum of 1 hour per day.</p>
-            <p>4. Each Collab Room's capacity is a minimum of 5 and a maximum of 10 persons.</p>
-            <p>5. Eating and drinking are not allowed inside the Collab Room.</p>
-            <p class="uppercase font-semibold mt-2 text-gray-700">THANK YOU.</p>
-          </div>
-      
-          <!-- Buttons -->
-          <div class="two-button-container">
-            <button type="cancel" class="cancel-button w-full">Cancel</button>
-            <button type="reserve" class="reserve-button w-full">Reserve</button>
-          </div>
+            <div class="form-group">
+                <label for="participants">Number of Participants:</label>
+                <input type="number" id="participants" value="1" min="1">
+            </div>
+            <div class="form-group">
+                <label for="reason">Reason for Reservation:</label>
+                <textarea id="reason"></textarea>
+            </div>
+
+            <section class="guidelines">
+                <div id="reminder-container">
+                   <span style="display: inline-block; width: 20px; height: 20px; background-image: url('images/info-circle.png'); background-size: contain; vertical-align: middle; margin-right: 3px;"></span><b>For Collab Room Reservation please READ the guidelines.</b><br>
+                   1. Collaboration rooms may reserved one day advance . Same day reservation automatically cancelled.<br>
+                   2. If a group does not claim a reservation within 15 minutes of the scheduled reservation, it will be forfeited.<br>
+                   3. Collab Rooms may be reserved for a maximum of 1 hour per day.<br>
+                   4. Each Collab Room’s capacity is minimum of 5, maximum of 10 persons.<br>
+                   5. Eating and drinking are not allowed inside the Collab Room.<br>
+                   <br>
+                   THANK YOU.</h3>
+               </div>
+           </section>
+        </div>
+        <button id="submit-reservation">Submit Reservation →</button>
 
     </div>
 
+    </div>
 </section>
+
+<footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-logo">
+                    <img src="images/qcu.png" alt="Quezon City University Logo">
+                </div>
+            </div>
+            <div class="footer-right">
+                <h1><b>Contact Us</b></h1>
+                <div class="contact-info">
+                    <img src="images/gmail.png" alt="Email Icon">
+                    <a href="mailto:library@qcu.edu.ph">library@qcu.edu.ph</a>
+                </div>
+                <div class="contact-info">
+                    <img src="images/fb.png" alt="Facebook Icon">
+                    <a href="https://www.facebook.com/qculibraries" target="_blank">facebook.com/qculibraries</a>
+                </div>
+                <p>673 Quirino Highway Brgy. San Bartolome,<br>Novaliches, Quezon City, Metro Manila</p>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2025 QCU. All Rights Reserved.</p>
+    </footer>
 
 
 <script src="reservation.js"></script>
 </body>
 </html>
     
+
