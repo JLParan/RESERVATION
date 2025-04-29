@@ -110,6 +110,21 @@ nav ul li a.active {
     font-size: medium;
   }
   
+.form-input {
+    width: calc(100% - 12px); 
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: small;
+    box-sizing: border-box;
+  }
+  
+.form-input:focus {
+    outline: none;
+    border-color: #deeeff; 
+    box-shadow: 0 0 5px; 
+  }
+ 
   .save-button {
     padding: 12px;
     background-color: #1852AC;

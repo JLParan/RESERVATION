@@ -397,3 +397,49 @@ h3{
     margin-top: 0.5rem; /* mt-2 */
     max-width: 90%;
 }
+
+  .reservation-info{
+    background-color: #F1F6FF;
+    padding: 15px;
+    border-radius: 8px;
+    border-color: #C1DAFF;
+    margin: 30px;
+}
+
+.two-button-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    font-size: 0.75rem; /* text-xs */
+  }
+
+
+.cancel-button {
+    background-color: #dde3ee;
+    color: black;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: small;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+.cancel-button:hover {
+    background-color: rgb(245, 102, 102);
+  }
+
+  .reserve-button {
+    background-color: #386EC2;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: small;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+.reserve-button:hover {
+    background-color: #7fa0d7;
+  }
