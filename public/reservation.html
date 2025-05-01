@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Save UR Space Reservation</title>
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="reservation.css">
     <script src="https://cdn.tailwindcss.com"></script>
+
 
 </head>
 <body class="bg-gray-100 font-sans antialiased">
@@ -14,22 +15,25 @@
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 
+
     <header>
         <nav>
             <ul>
                 <li><a href="/home.html">Home</a></li>
                 <li><a href="/about.html">About Us</a></li>
 
+
             <li>
-                <div = class="logo-container">
+                <div class="logo-container">
                     <img src="images/logo.png"alt="QCU Logo">
                 </div>
             </li>
                 <li><a href="/services.html">Our Services</a></li>
-                <li><a href="/contact.html">Contact Us</a></li>
+                <li><a href="/profile.html">Profile</a></li>
             </ul>
         </nav>
     </header>
+
 
 <section class="container">
     <div class="container-content">
@@ -43,6 +47,7 @@
             </div>
         </section>
 
+
         <section class="calendar">
                 <div class="calendar-container">
                     <div class="month-navigation">
@@ -50,7 +55,7 @@
                         <h2 id="month-name">May 2025</h2>
                         <button id="next-month">❯</button>
                     </div>
-        
+       
                     <div class="days-of-week">
                         <div>SUN</div>
                         <div>MON</div>
@@ -81,13 +86,14 @@
                         </div>
                     </div>
                 </div>
-                
+               
         <div id="selected-date-container">
             <b>Selected Date: </b><span id="selected-date-text"></span> <br>
             <span style="display: inline-block; width: 20px; height: 20px; background-image: url('images/info-circle.png'); background-size: contain; vertical-align: middle; margin-right: 3px;"></span> Please be advised that your reservation will be held for 15 minutes from the scheduled time. If you do not arrive within this timeframe, your reservation will be automatically voided. </h3>
         </div>
 
-    <h1 class="reservation">Reservation Details</h1>
+<h1 class="reservation">Reservation Details</h1>
+
 
             <form id="student-form">
                 <div class="form-group">
@@ -100,10 +106,45 @@
                     <input type="text" id="student-id" name="student-id" class="custom-input" placeholder="Enter student ID">
                     <p id="student-id-error" class="error-message"></p>
                 </div>
-                <div id="new-fields-container">
+                <div class="form-group">
+                    <label class="custom-label mb-2 block">Select Your Program</label>
+                    <div id="program-toggle" class="flex flex-wrap gap-2">
+                        <button type="button" class="program-btn" data-program="BS Information Technology">BS Information Technology</button>
+                        <button type="button" class="program-btn" data-program="BS Industrial Engineering">BS Industrial Engineering</button>
+                        <button type="button" class="program-btn" data-program="BS Electronics Engineering">BS Electronics Engineering</button>
+                        <button type="button" class="program-btn" data-program="BS Entrepreneurship">BS Entrepreneurship</button>
+                        <button type="button" class="program-btn" data-program="BS Accountancy">BS Accountancy</button>
+                        <button type="button" class="program-btn" data-program="BS Management Accountancy">BS Management Accountancy</button>
+                        <button type="button" class="program-btn" data-program="BS Information System">BS Information System</button>
+                        <button type="button" class="program-btn" data-program="BS Early Childhood Education">BS Early Childhood Education</button>
+                        <button type="button" class="program-btn" data-program="BS Computer Science">BS Computer Science</button>
                     </div>
-                <button type="submit" class="custom-button w-full">Add a Student +</button>
+                    <input type="hidden" name="program" id="selected-program">
+                    <p id="program-error" class="error-message"></p>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="num-students" class="custom-label">Number of Students</label>
+                    <select id="num-students" name="num-students" class="custom-input">
+                        <option value="" disabled selected>-- Select Number of Students --</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div id="students-container"></div>
+
+<div id="new-fields-container">
+                    </div>
+                <button type="submit" class="custom-button w-full">Save Details</button>
             </form>
+
 
                 <div class="select-group">
                     <label for="room-select" class="select-label">Select a Room</label>
@@ -124,14 +165,14 @@
                     </div>
                     <p class="description">Select a collab room to be reserved. Each room can only be assigned to one group at a time.</p>
                 </div>
-        <section class="time-selection">
+
+<section class="time-selection">
          <div id="reminder-container">
-            <span style="display: inline-block; width: 20px; height: 20px; background-image: url('images/info-circle.png'); background-size: contain; vertical-align: middle; margin-right: 3px;"></span> Please be advised that your reservation will be held for 15 minutes from the scheduled time. If you do not arrive within this timeframe, your reservation will be automatically voided. </h3>
+            <span style="display: inline-block; width: 20px; height: 20px; background-image: url('images/info-circle.png'); background-size: contain; vertical-align: middle; margin-right: 3px;"></span> Please select your desired reservation start time. All displayed hours are within the library’s operating hours.</h3>
         </div>
     </section>
 
         <div class="reservation-details">
-            <h2>Reservation Details</h2>
             <div class="form-group">
                 <label for="start-time">Reservation Start Time:</label>
                 <select id="start-time">
@@ -191,7 +232,7 @@
                    <br>
                    THANK YOU.</h3>
                </div>
-           </section>
+</section>
         </div>
         <button id="submit-reservation">Submit Reservation →</button>
 
@@ -227,5 +268,6 @@
 <script src="reservation.js"></script>
 </body>
 </html>
-    
+
+
 
