@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reservation List</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+  <div class="sidebar">
+    <img src="logo.png" class="logo" alt="Logo">
+    <div class="nav-icons">
+      <div class="icon"></div>
+      <div class="icon"></div>
+      <div class="icon"></div>
+      <div class="icon"></div>
+    </div>
+  </div>
+
+
+  <div class="main-content">
+    <div class="header">
+      <input type="text" class="search" placeholder="Search...">
+      <div class="user-profile">👤 Vienne <span class="role">Admin</span></div>
+    </div>
+
+    <h2>Reservation List</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Student No.</th>
+          <th>Date</th>
+          <th>Room</th>
+          <th>Pax</th>
+          <th>Time-in</th>
+          <th>Time-out</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>01</td>
+          <td><a href="#" onclick="openModal()">Carcer, Stefanie Vienne</a></td>
+          <td>23-1844</td>
+          <td>05-1-25</td>
+          <td>2</td>
+          <td>5</td>
+          <td>12:00 PM</td>
+          <td>1:00 PM</td>
+          <td><span class="status ongoing">Ongoing</span></td>
+          <td>[edit]</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- MODAL -->
+  <div class="overlay" id="modalOverlay">
+    <div class="modal-box">
+      <button class="close-btn" onclick="closeModal()">×</button>
+
+      <div class="modal-content">
+        <div class="modal-labels">
+          <p>ID</p>
+          <p>Name</p>
+          <p>Student No.</p>
+          <p>Date</p>
+          <p>Room</p>
+          <p>Pax</p>
+          <p>Participants</p>
+          <p>Time-in</p>
+          <p>Time-out</p>
+          <p>Status</p>
+        </div>
+
+        <div class="modal-fields">
+          <p>01</p>
+          <p>Carcer, Stefanie Vienne</p>
+          <p>23-1844</p>
+          <p>05-1-25</p>
+          <p>2</p>
+          <p>5</p>
+          <div class="participant-select">
+            <select disabled>
+              <option>Ibo, Justine</option>
+            </select>
+            <small class="note">[View Only]</small>
+          </div>
+          <p>12:00 PM</p>
+          <p>1:00 PM</p>
+          <div class="status-select">
+            <select>
+              <option selected>Ongoing</option>
+              <option>Approved</option>
+              <option>Cancelled</option>
+              <option>Completed</option>
+            </select>
+            <small class="note">(Editable)</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+        <button class="save-btn">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById('modalOverlay').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('modalOverlay').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
