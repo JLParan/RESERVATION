@@ -6,8 +6,12 @@ const selectedDateTextEl = document.getElementById("selected-date-text");
 const selectedDateContainerEl = document.getElementById("selected-date-container");
 
 
+
+
 let currentDate = new Date();
 let selectedDate = null; // Track the selected date
+
+
 
 
 // Function to generate the calendar
@@ -17,11 +21,15 @@ function generateCalendar(year, month) {
     const today = new Date();
 
 
+
+
     daysGridEl.innerHTML = "";
     monthNameEl.textContent = new Date(year, month).toLocaleString("default", {
         month: "long",
         year: "numeric",
     });
+
+
 
 
     // Generate empty cells for the days before the first day of the month
@@ -30,10 +38,14 @@ function generateCalendar(year, month) {
     }
 
 
+
+
     // Generate day cells
     for (let day = 1; day <= daysInMonth; day++) {
         const date = new Date(year, month, day);
         let dayClass = "day";
+
+
 
 
         if (date.setHours(0, 0, 0, 0) < today.setHours(0, 0, 0, 0)) {
@@ -45,9 +57,13 @@ function generateCalendar(year, month) {
         }
 
 
+
+
         if (selectedDate && date.setHours(0, 0, 0, 0) === selectedDate.setHours(0, 0, 0, 0)) {
             dayClass += " selected"; // Highlight the selected date
         }
+
+
 
 
         const dayCell = document.createElement("div");
@@ -59,6 +75,8 @@ function generateCalendar(year, month) {
 }
 
 
+
+
 // Handle day click event
 function handleDayClick(date) {
     const today = new Date();
@@ -67,8 +85,12 @@ function handleDayClick(date) {
     }
 
 
+
+
     // Store selected date
     selectedDate = date;
+
+
 
 
     // Update displayed selected date
@@ -76,11 +98,15 @@ function handleDayClick(date) {
     selectedDateContainerEl.style.display = "block";
 
 
+
+
     // Remove yellow highlight from any previously selected date
     const previouslySelected = document.querySelector(".day.selected");
     if (previouslySelected) {
         previouslySelected.classList.remove("selected");
     }
+
+
 
 
     // Highlight the clicked date in yellow
@@ -97,9 +123,12 @@ function handleDayClick(date) {
     });
 }
 
+
 // Initialize the calendar
 generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
 selectedDateContainerEl.style.display = "none"; // Hide selected date initially
+
+
 
 
 // Navigation for previous and next month
@@ -111,12 +140,15 @@ prevMonthBtn.addEventListener("click", () => {
 });
 
 
+
+
 nextMonthBtn.addEventListener("click", () => {
     currentDate.setMonth(currentDate.getMonth() + 1);
     generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
     selectedDateContainerEl.style.display = "none"; // Hide selected date
     selectedDate = null;
 });
+
 
 // Form elements
 const form = document.getElementById('student-form');
@@ -131,6 +163,7 @@ const programError = document.getElementById('program-error');
 const numStudentsSelect = document.getElementById('num-students');
 const studentsContainer = document.getElementById('students-container');
 
+
 programButtons.forEach(btn => {
     btn.addEventListener('click', () => {
         programButtons.forEach(b => b.classList.remove('selected'));
@@ -140,6 +173,7 @@ programButtons.forEach(btn => {
     });
 });
 
+
 function validateProgram() {
     if (programInput.value.trim() === '') {
         programError.textContent = 'Please select a program.';
@@ -148,14 +182,19 @@ function validateProgram() {
     return true;
 }
 
+
 numStudentsSelect.addEventListener('change', function () {
     const numStudents = parseInt(this.value); // Get selected number of students
     studentsContainer.innerHTML = ''; // Clear existing fields
 
 
+
+
     for (let i = 1; i <= numStudents; i++) {
         const studentFieldGroup = document.createElement('div');
         studentFieldGroup.classList.add('student-container');
+
+
 
 
         studentFieldGroup.innerHTML = `
@@ -177,6 +216,7 @@ numStudentsSelect.addEventListener('change', function () {
     }
 });
 
+
 // Validation functions
 function validateName() {
     if (nameInput.value.trim() === '') {
@@ -188,6 +228,8 @@ function validateName() {
     nameError.textContent = '';
     return true;
 }
+
+
 
 
 function validateStudentId() {
@@ -202,8 +244,12 @@ function validateStudentId() {
 }
 
 
+
+
 nameInput.addEventListener('input', validateName);
 studentIdInput.addEventListener('input', validateStudentId);
+
+
 
 
 // Handle form submission
@@ -214,9 +260,13 @@ form.addEventListener('submit', (event) => {
     const isProgramValid = validateProgram();
 
 
+
+
 if (isNameValid && isStudentIdValid && isProgramValid && selectedDate && roomSelect.value) {
     // continue with submission
 }
+
+
 
 
     if (isNameValid && isStudentIdValid && selectedDate && roomSelect.value) {
@@ -226,6 +276,8 @@ if (isNameValid && isStudentIdValid && isProgramValid && selectedDate && roomSel
         data.append('entry.0987654321', studentIdInput.value); // Replace with the actual entry ID for Student ID
         data.append('entry.1122334455', selectedDate.toLocaleDateString()); // Replace with actual entry ID for Date
         data.append('entry.6677889900', roomSelect.value); // Replace with actual entry ID for Room
+
+
 
 
         // Send data via fetch to Google Forms or your endpoint
@@ -250,10 +302,13 @@ if (isNameValid && isStudentIdValid && isProgramValid && selectedDate && roomSel
     }
 });
 
+
 // Handle room select toggle
 const selectWrapper = document.querySelector('.custom-select-wrapper');
 const selectTrigger = document.querySelector('.custom-select-trigger');
 const selectOptions = document.querySelector('.custom-options');
+
+
 
 
 selectTrigger.addEventListener('click', () => {
@@ -262,15 +317,23 @@ selectTrigger.addEventListener('click', () => {
 });
 
 
+
+
 selectOptions.addEventListener('click', (event) => {
-    if (event.target.tagName === 'LI') {
+    if (event.target.classList.contains('custom-option')) {
         const value = event.target.dataset.value;
         roomSelect.value = value;
-        selectTrigger.querySelector('span').textContent = event.target.textContent;
+        selectTrigger.textContent = event.target.textContent;
         selectWrapper.classList.remove('open');
         selectOptions.style.display = 'none';
     }
 });
+
+
+
+
+
+
 
 
 // Close the dropdown if clicked outside
@@ -280,6 +343,8 @@ document.addEventListener('click', (event) => {
         selectOptions.style.display = 'none';
     }
 });
+
+
 
 
             submitButton.addEventListener('click', () => {
@@ -294,4 +359,4 @@ document.addEventListener('click', (event) => {
                     alert('Please select a start time.');
                 }
             });
-    
+   
