@@ -9,6 +9,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
 
+
+
 </head>
 <body class="bg-gray-100 font-sans antialiased">
     <div id="root"></div>
@@ -16,11 +18,15 @@
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 
 
+
+
     <header>
         <nav>
             <ul>
                 <li><a href="/home.html">Home</a></li>
                 <li><a href="/about.html">About Us</a></li>
+
+
 
 
             <li>
@@ -35,6 +41,8 @@
     </header>
 
 
+
+
 <section class="container">
     <div class="container-content">
         <h1>Collaborative Room Reservation Form</h1>
@@ -46,6 +54,8 @@
                 <p class="note">Please check the availability below and make your reservations accordingly.</p>
             </div>
         </section>
+
+
 
 
         <section class="calendar">
@@ -92,9 +102,6 @@
             <span style="display: inline-block; width: 20px; height: 20px; background-image: url('images/info-circle.png'); background-size: contain; vertical-align: middle; margin-right: 3px;"></span> Please be advised that your reservation will be held for 15 minutes from the scheduled time. If you do not arrive within this timeframe, your reservation will be automatically voided. </h3>
         </div>
 
-<h1 class="reservation">Reservation Details</h1>
-
-
             <form id="student-form">
                 <div class="form-group">
                     <label for="name" class="custom-label">Name</label>
@@ -124,6 +131,8 @@
                 </div>
 
 
+
+
                 <div class="form-group">
                     <label for="num-students" class="custom-label">Number of Students</label>
                     <select id="num-students" name="num-students" class="custom-input">
@@ -140,37 +149,37 @@
                 </div>
                 <div id="students-container"></div>
 
+
 <div id="new-fields-container">
                     </div>
                 <button type="submit" class="custom-button w-full">Save Details</button>
             </form>
 
-
-                <div class="select-group">
-                    <label for="room-select" class="select-label">Select a Room</label>
-                    <div class="custom-select-wrapper" tabindex="0">
-                        <div class="custom-select-trigger">
-                            <span>-- Select a Room --</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                        </div>
-                        <div class="custom-options">
-                            <select id="room-select">
-                                <option value="" disabled selected>-- Select a Room --</option>
-                                <option value="room1">Room 1</option>
-                                <option value="room2">Room 2</option>
-                                <option value="room3">Room 3</option>
-                                <option value="room4">Room 4</option>
-                            </select>
-                        </div>
-                    </div>
-                    <p class="description">Select a collab room to be reserved. Each room can only be assigned to one group at a time.</p>
+            <div class="select-group">
+                <label for="room-select" class="select-label">Select a Room</label>
+                <div class="custom-select-wrapper" tabindex="0">
+                  <div class="custom-select-trigger" id="selected-room-label">
+                    -- Select a Room --
+                  </div>
+                  <div class="custom-options hidden" id="room-options">
+                    <div class="custom-option" data-value="room1">Room 1</div>
+                    <div class="custom-option" data-value="room2">Room 2</div>
+                    <div class="custom-option" data-value="room3">Room 3</div>
+                    <div class="custom-option" data-value="room4">Room 4</div>
+                    <div class="custom-option" data-value="room5">Room 5</div>
+                    <div class="custom-option" data-value="room6">Room 6</div>
+                  </div>
+                  <input type="hidden" id="room-select" name="room">
                 </div>
+                <p class="description">Select a collab room to be reserved. Each room can only be assigned to one group at a time.</p>
+              </div>
 
 <section class="time-selection">
          <div id="reminder-container">
             <span style="display: inline-block; width: 20px; height: 20px; background-image: url('images/info-circle.png'); background-size: contain; vertical-align: middle; margin-right: 3px;"></span> Please select your desired reservation start time. All displayed hours are within the library’s operating hours.</h3>
         </div>
     </section>
+
 
         <div class="reservation-details">
             <div class="form-group">
@@ -212,23 +221,21 @@
                 <label for="end-time">Reservation End Time:</label>
                 <input type="text" id="end-time" value="" readonly>
             </div>
-            <div class="form-group">
-                <label for="participants">Number of Participants:</label>
-                <input type="number" id="participants" value="1" min="1">
-            </div>
+            
             <div class="form-group">
                 <label for="reason">Reason for Reservation:</label>
                 <textarea id="reason"></textarea>
             </div>
 
+
             <section class="guidelines">
                 <div id="reminder-container">
                    <span style="display: inline-block; width: 20px; height: 20px; background-image: url('images/info-circle.png'); background-size: contain; vertical-align: middle; margin-right: 3px;"></span><b>For Collab Room Reservation please READ the guidelines.</b><br>
                    1. Collaboration rooms may reserved one day advance . Same day reservation automatically cancelled.<br>
-                   2. If a group does not claim a reservation within 15 minutes of the scheduled reservation, it will be forfeited.<br>
-                   3. Collab Rooms may be reserved for a maximum of 1 hour per day.<br>
-                   4. Each Collab Room’s capacity is minimum of 5, maximum of 10 persons.<br>
-                   5. Eating and drinking are not allowed inside the Collab Room.<br>
+                   2. If a group does not claim a reservation within 15 minutes of the scheduled reservation, it will be forfeited.<br>
+                   3. Collab Rooms may be reserved for a maximum of 1 hour per day.<br>
+                   4. Each Collab Room’s capacity is minimum of 5, maximum of 10 persons.<br>
+                   5. Eating and drinking are not allowed inside the Collab Room.<br>
                    <br>
                    THANK YOU.</h3>
                </div>
@@ -236,10 +243,13 @@
         </div>
         <button id="submit-reservation">Submit Reservation →</button>
 
+
     </div>
+
 
     </div>
 </section>
+
 
 <footer>
         <div class="footer-content">
@@ -265,9 +275,132 @@
     </footer>
 
 
+
+
 <script src="reservation.js"></script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const wrapper = document.querySelector(".custom-select-wrapper");
+      const trigger = wrapper.querySelector(".custom-select-trigger");
+      const options = document.querySelector("#room-options");
+      const hiddenInput = document.querySelector("#room-select");
+      const label = document.querySelector("#selected-room-label");
+   
+      // Toggle dropdown visibility
+      trigger.addEventListener("click", (e) => {
+        options.classList.toggle("hidden");
+      });
+   
+      // Close dropdown if clicking outside
+      document.addEventListener("click", () => {
+        options.classList.add("hidden");
+      });
+   
+      // Handle option selection
+      options.querySelectorAll(".custom-option").forEach(option => {
+        option.addEventListener("click", (e) => {
+          const value = option.getAttribute("data-value");
+          const text = option.textContent;
+   
+          hiddenInput.value = value;
+          label.textContent = text;
+          options.classList.add("hidden"); // Hide dropdown immediately after selection
+        });
+      });
+    });
+</script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const wrapper = document.querySelector(".custom-select-wrapper");
+        const trigger = wrapper.querySelector(".custom-select-trigger");
+        const options = document.querySelector("#room-options");
+        const hiddenInput = document.querySelector("#room-select");
+        const label = document.querySelector("#selected-room-label");
+
+
+        // Toggle dropdown visibility
+        trigger.addEventListener("click", (e) => {
+            options.classList.toggle("hidden");
+        });
+
+
+        // Close dropdown if clicking outside
+        document.addEventListener("click", () => {
+            options.classList.add("hidden");
+        });
+
+
+        // Handle option selection
+        options.querySelectorAll(".custom-option").forEach(option => {
+            option.addEventListener("click", (e) => {
+                const value = option.getAttribute("data-value");
+                const text = option.textContent;
+
+
+                hiddenInput.value = value;
+                label.textContent = text;
+                options.classList.add("hidden"); // Hide dropdown immediately after selection
+            });
+        });
+
+
+        // --- Start Time and End Time functionality ---
+        const startTimeSelect = document.getElementById('start-time');
+        const endTimeInput = document.getElementById('end-time');
+       
+
+
+
+
+        // Function to add 1 hour to the start time
+        function updateEndTime() {
+            const startTime = startTimeSelect.value;
+
+
+
+
+            if (startTime) {
+                // Parse the selected time
+                const [hours, minutes] = startTime.split(':').map(num => parseInt(num));
+
+
+                // Create a Date object for the start time
+                const startDate = new Date();
+                startDate.setHours(hours);
+                startDate.setMinutes(minutes);
+                startDate.setSeconds(0);
+
+
+                // Add 1 hour to the start time
+                startDate.setHours(startDate.getHours() + 1);
+
+
+                // Format the new end time
+                const endHours = startDate.getHours().toString().padStart(2, '0');
+                const endMinutes = startDate.getMinutes().toString().padStart(2, '0');
+
+
+                // Update the end time input field
+                endTimeInput.value = `${endHours}:${endMinutes}`;
+            }
+        }
+
+
+        // Add event listener to update end time when start time changes
+        startTimeSelect.addEventListener('change', updateEndTime);
+    });
+</script>
+
+
+
+
+
+
+
+
 </body>
 </html>
-
-
-
