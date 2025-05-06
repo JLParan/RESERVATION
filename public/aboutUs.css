@@ -1,13 +1,13 @@
 body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-  }
+    font-family: 'Poppins', sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
 
 header {
     background-color: #fff;
     padding: 10px 20px;
+    margin-bottom: 30px;
     }
     
 nav ul {
@@ -19,7 +19,7 @@ nav ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10rem;
+    gap: 8rem;
     font-size: large;
     }
     
@@ -33,15 +33,19 @@ nav ul li a {
     font-weight: bold;
     }
 
+nav ul li a:hover {
+    color: #808080; 
+}
+    
 nav ul li a.active {
-        color: red;
-     }
+    color: #EF2D30; 
+}
 
 .logo-container img {
     max-height: 50px;
-    }
-  
-  main {
+}
+
+main {
     padding: 40px 20px;
   }
 
@@ -56,7 +60,7 @@ nav ul li a.active {
 .picture-container {
     position: relative;
     width: 100%;
-    height: 750px;
+    height: 600px;
 }
 
 .picture-container img {
@@ -70,14 +74,14 @@ nav ul li a.active {
 
 .inner-box {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 150%;
-    height: 455px;
+    max-width: 100%;
+    height: 400px;
     background-color: #0969fa77;
-    border-radius: 20px;
-    padding: 20px;
+    border-radius: 10px;
+    padding: 30px 30px;
     box-sizing: border-box;
     color: #fff;
     text-align: center;
@@ -85,45 +89,22 @@ nav ul li a.active {
 }
 
 .inner-box h1 {
-    font-size: 50px;
+    font-size: 40px;
     font-weight: bold;
-    margin: 1%;
+    margin: 10px;
 }
 
 .inner-box p {
     font-size: 20px;
-    line-height: 2;
-    margin: 5% 0;
+    line-height: 1.6;
     font-weight: normal;
     text-align: justify;
-}
-
-.intro {
-    text-align: center;
-    padding: 20px;
-}
-
-.intro h1 {
-    font-size: 40px;
-    font-weight: bold;
-    color: #6b7280;
-    margin: 8px 0;
-    padding-top: 5px;
-}
-
-.intro p {
-    font-size: 20px;
-    font-weight: 200;
-    color: #6b7280;
-    margin: 8px 0;
 }
 
 .library-section {
     display: flex;
     justify-content: center;
     text-align: justify;
-    padding: 10px;
-    margin-bottom: 8px;
 }
 
 .library-container {
@@ -131,17 +112,17 @@ nav ul li a.active {
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
-    max-width: 1200px;
+    max-width: 70%;
 }
 
 .library-mission, .library-vision {
-    flex: 0 0 40%;
+    flex: 0 0 48%;
     padding: 10px;
     font-weight: normal;
 }
 
 .library-mission h2, .library-vision h2 {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
     margin-bottom: 10px;
     color: #1852AC;
@@ -149,9 +130,9 @@ nav ul li a.active {
 }
 
 .library-mission p, .library-vision p {
-    font-size: 20px;
+    font-size: 17px;
     line-height: 1.6;
-    color: #6b7280;
+    color: #808080;
 }
 
 @media (max-width: 768px) {
@@ -166,27 +147,28 @@ nav ul li a.active {
     }
 }
 
+
 .library-hours {
     width: 100%;
     max-width: 75%;
-    margin: 20px auto;
+    margin: 90px auto;
     padding: 20px;
     text-align: center;
 }
 
 .hours-box {
-    width: 100%;
-    padding: 20px;
-    border: 1px solid #A7CAFF;
+    max-width: 100%;
+    padding: 10px;
     border-radius: 10px;
-    background-color: #E5EFFF;
 }
 
 .hours-box h2 {
-    font-size: 32px;
+    font-size: 25px;
     font-weight: bold;
-    color: #6b7280;
-    margin: 10px 0 20px;
+    color: #ffffff;
+    background-color: #1852AC;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .hours-container {
@@ -196,72 +178,95 @@ nav ul li a.active {
 }
 
 .campus-hours {
-    width: 48%;
-    padding: 10px;
-    text-align: left;
+    width: 50%;
+    padding: 20px;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
 }
 
 .campus-hours h3 {
-    font-size: 25px;
-    text-align: center;
-    margin: 0 0 15px;
+    font-size: 18px;
+    text-align: justify;
+    margin: auto auto;
+    padding: 5px;
     font-weight: bold;
-    color: #6b7280;
+    color: #808080;
 }
 
 .campus-hours p {
-    font-size: 18px;
-    line-height: 1.5;
-    text-align: center;
-    color: #555;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.6;
+    margin: auto auto;
+    text-align: justify;
+    color: #808080;
 }
 
 .separator {
-    width: 2px;
-    height: 100%;
+    border-left: 2px solid #1852AC;
+    height: 170px;
     background-color: #1852AC;
-    margin: 0 20px;
+    margin: 0 0px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 70%) {
     .hours-container {
         flex-direction: column;
-        align-items: center;
+        align-items: justify;
     }
 
     .campus-hours {
-        width: 90%;
-        margin-bottom: 20px;
+        max-width: 10%;
+        margin-bottom: 10px;
     }
 
     .separator {
-        display: none;
+        display:none;
+        border-left: none; /* Remove vertical separator */
+        border-top: 1px solid #ccc; /* Add a horizontal separator */
+        width: 80%; /* Make the horizontal line wider */
+        margin: 15px auto; /* Add top/bottom margin and center horizontally */
     }
+}
+
+.intro {
+    text-align: center;
+    padding: 10px;
+}
+
+.intro h1 {
+    font-size: 25px;
+    font-weight: bold;
+    color: #808080;
+    margin: 0px 0;
+}
+
+.intro p {
+    font-size: 17px;
+    font-weight: 200;
+    color: #808080;
+    margin: 8px 0;
 }
 
 .about-us {
     max-width: 80%;
-    margin: auto;
+    margin: auto auto;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    column-gap: 0;
-    row-gap: 60px;
+    column-gap: 1px;
+    row-gap: 15px;
     justify-content: center;
     justify-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .card {
     width: 100%;
-    max-width: 211px;
-    height: 238px;
+    max-width: 80%;
     background: #f9f9f9;
-    padding: 20px 10px;
-    border-radius: 15px;
-    text-align: center;
+    padding: 20px 30px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
 }
@@ -271,28 +276,29 @@ nav ul li a.active {
 }
 
 .card img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    margin: 20px 0 15px;
+    margin: auto auto;
     border: 2px solid #ccc;
 }
 
 .name {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
-    margin: 35px 0 15px;
+    color: #808080;
+    margin: 25px 0 5px;
     text-align: center;
 }
 
 .position {
-    font-size: 15px;
-    color: #2862BA;
+    font-size: 12px;
+    color: #1852AC;
     text-align: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 100px) {
     .about-us {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -303,3 +309,96 @@ nav ul li a.active {
         grid-template-columns: 1fr;
     }
 }
+footer {
+    background-color: #1852AC; /* Stronger, darker blue */
+    color: #fff;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertically center items */
+    width: 35%; /* Increased width for better spacing */
+    max-width: 1200px; /* Maximum width for the whole footer content */
+    margin-bottom: 20px; /* Add space before the copyright */
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    margin-top: 20px;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    gap: 8px; 
+}
+
+.footer-right h1{
+    font-size: larger;
+    color: white;
+    text-align: justify;
+}
+
+.footer-right p{
+    font-size: small;
+    font-weight: bold;
+}
+
+.footer-logo {
+    margin-bottom: 10px;
+}
+
+.footer-logo img {
+    height: 150px; /* Slightly larger logo */
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Reduced gap */
+    color: white;
+}
+
+.contact-info img {
+    height: 20px; /* Consistent icon size */
+    width: 20px;
+}
+
+.copyright {
+    font-size: 0.9em;
+    color: #ffffff; /* Lighter shade for copyright */
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments (optional - adjust as needed) */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .footer-left, .footer-right {
+        align-items: center; /* Center items on smaller screens */
+    }
+}
+
+
+
+   
