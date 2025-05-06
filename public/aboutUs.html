@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About Us</title>
-  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-  <link rel="stylesheet" href="aboutUs.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="about.css"> 
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 
-  <header>
-    <nav>
-      <ul>
-        <li><a href="/public/home.html">Home</a></li>
-        <li><a class="active" href="/public/about.html">About Us</a></li>
-
-        <li class="logo-container">
-          <img src="/images/logo.png"alt="QCU Logo">
-        </li>
-
-        <li><a href="/services.html">Services</a></li>
-        <li><a href="/public/profile.html">Profile</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/home.html">Home</a></li>
+                <li><a class = "active" href="/about.html">About Us</a></li>
+            <li>
+                <div class="logo-container">
+                    <img src="/images/logo.png"alt="QCU Logo">
+                </div>
+            </li>
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
 
 <!-- Picture with Box Section -->
 <section class="picture-box-section">
@@ -48,7 +53,6 @@
               The QCU libraries, as part of the academic community, are committed to providing equal access to library collections, services, and facilities that shall assist the academe in their quest for knowledge, and yet accessible to all.
           </p>
       </div>
-      <div class="separator"></div> <!-- Invisible separator -->
       <div class="library-vision">
           <h2>LIBRARY VISION</h2>
           <p>
@@ -154,10 +158,28 @@
 
   </section>
 
+  <footer>
+    <div class="footer-content">
+        <div class="footer-left">
+            <div class="footer-logo">
+                <img src="/images/qcu.png" alt="Quezon City University Logo">
+            </div>
+        </div>
+        <div class="footer-right">
+            <h1><b>Contact Us</b></h1>
+            <div class="contact-info">
+                <img src="/images/gmail-icon.png" alt="Email Icon">
+                <a href="mailto:library@qcu.edu.ph">library@qcu.edu.ph</a>
+            </div>
+            <div class="contact-info">
+                <img src="/images/fb-icon.png" alt="Facebook Icon">
+                <a href="https://www.facebook.com/qculibraries" target="_blank">facebook.com/qculibraries</a>
+            </div>
+            <p>673 Quirino Highway Brgy. San Bartolome,<br>Novaliches, Quezon City, Metro Manila</p>
+        </div>
+    </div>
+    <p class="copyright">&copy; 2025 QCU. All Rights Reserved.</p>
+</footer>
+
 </body>
 </html>
-
-
-
-
-
