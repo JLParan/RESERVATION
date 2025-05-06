@@ -409,6 +409,7 @@ h3{
 .two-button-container {
     display: flex;
     justify-content: flex-end;
+    padding: 15px;
     gap: 1rem;
     font-size: 0.75rem; /* text-xs */
   }
