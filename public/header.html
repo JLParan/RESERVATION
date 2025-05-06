@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaveURSpace</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="header.css"> 
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/home.html">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+            <li>
+                <div class="logo-container">
+                    <img src="/images/logo.png"alt="QCU Logo">
+                </div>
+            </li>
+                <li><a href="/services.html">Our Services</a></li>
+                <li><a href="/profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
+
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    }
+
+header {
+    background-color: #fff;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    }
+    
+nav ul {
+    text-decoration: none;
+    font-weight: bold;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8rem;
+    font-size: large;
+    }
+    
+nav ul li {
+    margin: 0 15px;
+    }
+    
+nav ul li a {
+    text-decoration: none;
+    color: #1852AC; 
+    font-weight: bold;
+    }
+
+nav ul li a:hover {
+    color: #808080; 
+}
+    
+nav ul li a:active {
+    color: #EF2D30; 
+}
+
+.logo-container img {
+    max-height: 50px;
+    }
+</style>
