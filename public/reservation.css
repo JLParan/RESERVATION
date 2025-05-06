@@ -1,48 +1,53 @@
+
 body {
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    display: block;
     background-size: cover;
     background-repeat: no-repeat;
     }
 
-    header {
-        background-color: #fff;
-        padding: 10px 20px;
-        }
-        
-    nav ul {
-        text-decoration: none;
-        font-weight: bold;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10rem;
-        font-size: large;
-        }
-        
-    nav ul li {
-        margin: 0 15px;
-        }
-        
-    nav ul li a {
-        text-decoration: none;
-        color: #1852AC; 
-        font-weight: bold;
-        }
+header {
+    background-color: #fff;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    }
     
-    .logo-container img {
-        max-height: 50px;
-        }
+nav ul {
+    text-decoration: none;
+    font-weight: bold;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+    font-size: large;
+    }
+    
+nav ul li {
+    margin: 0 15px;
+    }
+    
+nav ul li a {
+    text-decoration: none;
+    color: #1852AC; 
+    font-weight: bold;
+    }
+
+.logo-container img {
+    max-height: 50px;
+    }
 
 h1{
     margin-left: 30px;
     padding: 10px;
     font-size:large;
     font-weight: bold;
+    color: #6b7280 ;
+
 }
 
 .container-content{
@@ -61,11 +66,13 @@ h1{
     border-radius: 5px;
     background-color: #E5EFFF;
     font-size: small;
+    color: #6b7280 ;
 
 }
 
 h3{
     font-weight: bold;
+    color: #6b7280 ;
 }
 
 .calendar-container {
@@ -87,7 +94,7 @@ h3{
     padding: 0.25rem 0.75rem; 
     border-radius: 0.375rem; 
     background-color: #e5e7eb; 
-    color: #4b5563; 
+    color: #6b7280 ; 
     cursor: pointer;        
     transition: background-color 0.3s ease; 
     font-size: 0.875rem; 
@@ -101,7 +108,7 @@ h3{
 .month-navigation h2 {
     font-size: large;      
     font-weight: 700;         
-    color: #374151;         
+    color: #6b7280 ;         
     margin: 0;
 }
 
@@ -218,34 +225,39 @@ h3{
     margin: 30px;
     font-size:large;
     font-weight: bold;
+    color: #6b7280 ;
+
 }
 
 #student-form {
-    background-color: #F1F6FF;
-    padding: 15px;
-    border-radius: 8px;
-    border-color: #C1DAFF;
+    padding: 20px 20px;
+    border-radius: 0.375rem; 
+    border: #ccc solid 1px;
     margin: 30px;
+    font-weight: 500;
+    font-size: small;
   }
   
 .form-group {
     margin-bottom: 15px;
     border-color: #808080;
+    color: #6b7280;
+    
   }
   
-.custom-label {
+.students-label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
     font-size: small;
-    color: #333;
+    color: #6b7280 ;
   }
   
 .custom-input {
     width: calc(100% - 12px); 
     padding: 8px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 2px;
     font-size: small;
     box-sizing: border-box;
   }
@@ -278,7 +290,8 @@ h3{
   }
   
 .w-full {
-    width: 150px; 
+    width: 110px; 
+    margin-left: 82.5%;
   }
   
 #new-fields-container {
@@ -287,14 +300,14 @@ h3{
 
 .select-group {
     margin: 30px;
-    margin-bottom: 20px; 
+    margin-bottom: 10px; 
 }
 
 .select-label {
     display: block;
     margin-bottom: 8px; 
     font-size: small; 
-    font-weight: bold; 
+    font-weight: 600; 
     color: #6b7280; 
 }
 
@@ -316,7 +329,7 @@ h3{
     border-width: 1px; 
     border-color: #d1d5db; 
     border-radius: 0.375rem; 
-    color: #4b5563; 
+    color: #6b7280 ; 
     cursor: pointer;
     transition: border-color 0.15s ease-in-out, shadow-sm 0.15s ease-in-out;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -341,7 +354,10 @@ h3{
 }
 
 .custom-options {
+    font-size: small;
+    color: #6b7280;
     position: absolute;
+    padding: 5px 10px;
     top: 100%;
     right: 0;
     left: 0;
@@ -369,7 +385,7 @@ h3{
     padding: 0.75rem 1rem; 
     font-size: 1rem; 
     line-height: 1.5rem; 
-    color: #4b5563; 
+    color: #6b7280 ; 
     cursor: pointer;
     transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
     white-space: nowrap;
@@ -398,49 +414,258 @@ h3{
     max-width: 90%;
 }
 
-  .reservation-info{
-    background-color: #F1F6FF;
-    padding: 15px;
-    border-radius: 8px;
-    border-color: #C1DAFF;
-    margin: 30px;
+.program-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 1rem;
 }
 
-.two-button-container {
-    display: flex;
-    justify-content: flex-end;
-    padding: 15px;
-    gap: 1rem;
-    font-size: 0.75rem; /* text-xs */
-  }
 
-
-.cancel-button {
-    background-color: #dde3ee;
-    color: black;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: small;
+.program-btn {
+    width: 14rem; /* Adjusted to fit "BS Early Childhood Education" comfortably */
+    padding: 0.25rem 1rem;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-.cancel-button:hover {
-    background-color: rgb(245, 102, 102);
-  }
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-family: 'Poppins', sans-serif;
+    font-size: small;
+    font-weight: bold;
+    text-align: justify;
+    white-space: wrap;
+}
 
-  .reserve-button {
+
+.program-btn:hover {
+    background-color: #386EC2 ; /* blue-400 */
+    color: white;
+}
+
+
+.program-btn.selected {
+    background-color: #386EC2 ; /* blue-500 */
+    color: white;
+    font-weight: normal;
+}
+
+/*add a save button here*/
+
+
+/* Style for each student container */
+.student-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+
+.student-header {
+    font-size: medium;
+    font-weight: normal;
+    color: #6b7280 ;
+}
+
+
+.student-fields {
+    display: flex;
+    gap: 15px;
+    color: #6b7280 ;
+}
+
+
+.student-name, .student-id {
+    flex: 1;
+    color: #6b7280 ;
+}
+
+
+.custom-input {
+    width: 100%;
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #6b7280 ;
+}
+
+
+.custom-label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+
+.time-selection{
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 15px;
+    border: 2px solid #A7CAFF;
+    border-radius: 5px;
+    background-color: #E5EFFF;
+    font-size: small;
+    color: #6b7280 ;
+
+}
+
+.reservation-details {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 30px;
+    
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: small;
+    font-weight: 600;
+}
+
+.form-group select,
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing:inherit;
+    font-size: small;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.guidelines{
+    margin: 0px;
+    padding: 15px;
+    border: 2px solid #A7CAFF;
+    border-radius: 5px;
+    background-color: #E5EFFF;
+    font-size: small;
+    color: #6b7280 ;
+}
+
+#submit-reservation{
     background-color: #386EC2;
     color: white;
-    padding: 10px;
+    padding: 12px 12px;
     border: none;
-    border-radius: 5px;
-    font-size: small;
+    border-radius: 8px;
     cursor: pointer;
+    font-size: small;
     transition: background-color 0.3s ease;
-  }
-  
-.reserve-button:hover {
-    background-color: #7fa0d7;
-  }
+    margin: 0px 30px;
+    margin-left: 76%;
+    margin-bottom: 30px;
+}
+
+#submit-reservation:hover {
+    background-color: #6B92CE;
+}
+
+footer {
+    background-color: #1852AC; /* Stronger, darker blue */
+    color: #fff;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertically center items */
+    width: 35%; /* Increased width for better spacing */
+    max-width: 1200px; /* Maximum width for the whole footer content */
+    margin-bottom: 20px; /* Add space before the copyright */
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    margin-top: 20px;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    gap: 8px; 
+}
+
+.footer-right h1{
+    font-size: larger;
+    color: white;
+    text-align: justify;
+}
+
+.footer-right p{
+    font-size: small;
+    font-weight: bold;
+}
+
+.footer-logo {
+    margin-bottom: 10px;
+}
+
+.footer-logo img {
+    height: 150px; /* Slightly larger logo */
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Reduced gap */
+    color: white;
+}
+
+.contact-info img {
+    height: 20px; /* Consistent icon size */
+    width: 20px;
+}
+
+.copyright {
+    font-size: 0.9em;
+    color: #ffffff; /* Lighter shade for copyright */
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments (optional - adjust as needed) */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .footer-left, .footer-right {
+        align-items: center; /* Center items on smaller screens */
+    }
+}
