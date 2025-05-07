@@ -3,43 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SaveURSpace Reservation</title>
+    <title>Reservation</title>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel="stylesheet" href="reservation.css">
+    <link rel="stylesheet" href="reservation.css"> 
     <script src="https://cdn.tailwindcss.com"></script>
 
-
-
-
 </head>
-<body class="bg-gray-100 font-sans antialiased">
+<body>
     <div id="root"></div>
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 
-
-
-
     <header>
-        <nav>
-            <ul>
-                <li><a href="/home.html">Home</a></li>
-                <li><a href="/about.html">About Us</a></li>
-
-
-
-
-            <li>
-                <div class="logo-container">
-                    <img src="/images/logo.png"alt="QCU Logo">
-                </div>
-            </li>
-                <li><a href="/services.html">Our Services</a></li>
-                <li><a href="/profile.html">Profile</a></li>
-            </ul>
-        </nav>
+        <div class="left-section">
+          <div class="logo-icon">
+            <img src="/images/SaveURSpace.png"alt="QCU Logo">
+          </div>
+          <nav>
+            <a href="/home.html">Home</a>
+            <a href="/about.html">About Us</a>
+            <a href="/services.html">Services</a>
+            <a href="/contact.html">Contact Us</a>
+          </nav>
+        </div>
     </header>
-
 
 
 
@@ -54,9 +41,6 @@
                 <p class="note">Please check the availability below and make your reservations accordingly.</p>
             </div>
         </section>
-
-
-
 
         <section class="calendar">
                 <div class="calendar-container">
@@ -96,12 +80,13 @@
                         </div>
                     </div>
                 </div>
-               
-        <div id="selected-date-container">
+
+                <div id="selected-date-container">
             <b>Selected Date: </b><span id="selected-date-text"></span> <br>
-            <span style="display: inline-block; width: 20px; height: 20px; background-image: url('/images/info-circle.png'); background-size: contain; vertical-align: middle; margin-right: 3px;"></span> Please be advised that your reservation will be held for 15 minutes from the scheduled time. If you do not arrive within this timeframe, your reservation will be automatically voided. </h3>
+            <span style="display: inline-block; width: 20px; height: 20px; background-image: url('/images/info-circle.png'); background-size: contain; vertical-align: middle; margin-right: 3px;"></span> Please be reminded to leave the room clean and tidy after use. Kindly ensure all items are returned to their proper places and any trash is disposed of appropriately.</h3>
         </div>
 
+        <section class="student-form-container">
             <form id="student-form">
                 <div class="form-group">
                     <label for="name" class="custom-label">Name</label>
@@ -130,9 +115,6 @@
                     <p id="program-error" class="error-message"></p>
                 </div>
 
-
-
-
                 <div class="form-group">
                     <label for="num-students" class="custom-label">Number of Students</label>
                     <select id="num-students" name="num-students" class="custom-input">
@@ -148,75 +130,65 @@
                     </select>
                 </div>
                 <div id="students-container"></div>
+            </section>
 
-
-<div id="new-fields-container">
+            <section class="time-slots-container">
+                <div class="time-container">
+                    <div class="time-slots">
+                        <div class="time-slot available clickable" data-time="7:00">7:00</div>
+                        <div class="time-slot available clickable" data-time="7:30">7:30</div>
+                        <div class="time-slot available clickable" data-time="8:00">8:00</div>
+                        <div class="time-slot available clickable" data-time="8:30">8:30</div>
+                        <div class="time-slot available clickable" data-time="9:00">9:00</div>
+                        <div class="time-slot available clickable" data-time="9:30">9:30</div>
+                        <div class="time-slot available clickable" data-time="10:00">10:00</div>
+                        <div class="time-slot available clickable" data-time="10:30">10:30</div>
+                        <div class="time-slot available clickable" data-time="11:00">11:00</div>
+                        <div class="time-slot available clickable" data-time="11:30">11:30</div>
+                        <div class="time-slot available clickable" data-time="12:00">12:00</div>
+                        <div class="time-slot available clickable" data-time="12:30">12:30</div>
+                        <div class="time-slot available clickable" data-time="1:00">1:00</div>
+                        <div class="time-slot available clickable" data-time="1:30">1:30</div>
+                        <div class="time-slot available clickable" data-time="2:00">2:00</div>
+                        <div class="time-slot available clickable" data-time="2:30">2:30</div>
+                        <div class="time-slot available clickable" data-time="3:00">3:00</div>
+                        <div class="time-slot available clickable" data-time="3:30">3:30</div>
+                        <div class="time-slot available clickable" data-time="4:00">4:00</div>
+                        <div class="time-slot available clickable" data-time="4:30">4:30</div>
+                        <div class="time-slot available clickable" data-time="5:00">5:00</div>
                     </div>
-                <button type="submit" class="custom-button w-full">Save Details</button>
-            </form>
-
-            <div class="select-group">
-                <label for="room-select" class="select-label">Select a Room</label>
-                <div class="custom-select-wrapper" tabindex="0">
-                  <div class="custom-select-trigger" id="selected-room-label">
-                    -- Select a Room --
-                  </div>
-                  <div class="custom-options hidden" id="room-options">
-                    <div class="custom-option" data-value="room1">Room 1</div>
-                    <div class="custom-option" data-value="room2">Room 2</div>
-                    <div class="custom-option" data-value="room3">Room 3</div>
-                    <div class="custom-option" data-value="room4">Room 4</div>
-                    <div class="custom-option" data-value="room5">Room 5</div>
-                    <div class="custom-option" data-value="room6">Room 6</div>
-                  </div>
-                  <input type="hidden" id="room-select" name="room">
+                    <div class="legend">
+                        <div class="legend-item">
+                            <div class="color-box available"></div>
+                            <span>Available</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="color-box selected"></div>
+                            <span>Selected</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="color-box reserved"></div>
+                            <span>Reserved</span>
+                        </div>
+                    </div>
                 </div>
-                <p class="description">Select a collab room to be reserved. Each room can only be assigned to one group at a time.</p>
-              </div>
+            </section>
 
 <section class="time-selection">
          <div id="reminder-container">
             <span style="display: inline-block; width: 20px; height: 20px; background-image: url('/images/info-circle.png'); background-size: contain; vertical-align: middle; margin-right: 3px;"></span> Please select your desired reservation start time. All displayed hours are within the library’s operating hours.</h3>
         </div>
-    </section>
+</section>
 
-
-        <div class="reservation-details">
+<section class="reservation-details">
+    <div class="reservation-details-container">
             <div class="form-group">
-                <label for="start-time">Reservation Start Time:</label>
-                <select id="start-time">
-                    <option value="" disabled selected>Select Start Time</option>
-                    <option value="07:00">07:00 AM</option>
-                    <option value="07:30">07:30 AM</option>
-                    <option value="08:00">08:00 AM</option>
-                    <option value="08:30">08:30 AM</option>
-                    <option value="09:00">09:00 AM</option>
-                    <option value="09:30">09:30 AM</option>
-                    <option value="10:00">10:00 AM</option>
-                    <option value="10:30">10:30 AM</option>
-                    <option value="11:00">11:00 AM</option>
-                    <option value="11:30">11:30 AM</option>
-                    <option value="12:00">12:00 PM</option>
-                    <option value="12:30">12:30 PM</option>
-                    <option value="13:00">01:00 PM</option>
-                    <option value="13:30">01:30 PM</option>
-                    <option value="14:00">02:00 PM</option>
-                    <option value="14:30">02:30 PM</option>
-                    <option value="15:00">03:00 PM</option>
-                    <option value="15:30">03:30 PM</option>
-                    <option value="16:00">04:00 PM</option>
-                    <option value="16:30">04:30 PM</option>
-                    <option value="17:00">05:00 PM</option>
-                    <option value="17:30">05:30 PM</option>
-                    <option value="18:00">06:00 PM</option>
-                    <option value="18:30">06:30 PM</option>
-                    <option value="19:00">07:00 PM</option>
-                    <option value="19:30">07:30 PM</option>
-                    <option value="20:00">08:00 PM</option>
-                    <option value="20:30">08:30 PM</option>
-                    <option value="21:00">09:00 PM</option>
-                </select>
             </div>
+            <div class="form-group">
+                <label for="end-time">Reservation Start Time:</label>
+                <input type="text" id="start-time" value="" readonly>
+            </div>
+            
             <div class="form-group">
                 <label for="end-time">Reservation End Time:</label>
                 <input type="text" id="end-time" value="" readonly>
@@ -242,13 +214,26 @@
 </section>
         </div>
         <button id="submit-reservation">Submit Reservation →</button>
-
-
     </div>
-
-
     </div>
 </section>
+
+<div id="reservation-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <div id="reminder-confirmation">
+            <span style="display: inline-block; width: 20px; height: 20px; background-image: url('/images/info-circle.png'); background-size: contain; vertical-align: middle; margin-right: 3px;"></span> Please ensure all details are accurate and confirm accordingly.</p>
+        </div>        
+        <p><strong>Date:</strong> <span id="modal-date"></span></p>
+        <p><strong>Time:</strong> <span id="modal-time"></span></p>
+        <p><strong>Program:</strong> <span id="modal-program"></span></p>
+        <p><strong>Number of Students:</strong> <span id="modal-num-students"></span></p>
+        <div id="modal-students-list">
+            </div>
+        <button id="confirm-button">Confirm Reservation</button>
+    </div>
+</div>
+
 
 
 <footer>
@@ -261,11 +246,11 @@
             <div class="footer-right">
                 <h1><b>Contact Us</b></h1>
                 <div class="contact-info">
-                    <img src="/images/gmail.png" alt="Email Icon">
+                    <img src="/images/gmail-icon.png" alt="Email Icon">
                     <a href="mailto:library@qcu.edu.ph">library@qcu.edu.ph</a>
                 </div>
                 <div class="contact-info">
-                    <img src="/images/fb.png" alt="Facebook Icon">
+                    <img src="/images/fb-icon.png" alt="Facebook Icon">
                     <a href="https://www.facebook.com/qculibraries" target="_blank">facebook.com/qculibraries</a>
                 </div>
                 <p>673 Quirino Highway Brgy. San Bartolome,<br>Novaliches, Quezon City, Metro Manila</p>
@@ -281,122 +266,263 @@
 
 
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const wrapper = document.querySelector(".custom-select-wrapper");
-      const trigger = wrapper.querySelector(".custom-select-trigger");
-      const options = document.querySelector("#room-options");
-      const hiddenInput = document.querySelector("#room-select");
-      const label = document.querySelector("#selected-room-label");
-   
-      // Toggle dropdown visibility
-      trigger.addEventListener("click", (e) => {
-        options.classList.toggle("hidden");
-      });
-   
-      // Close dropdown if clicking outside
-      document.addEventListener("click", () => {
-        options.classList.add("hidden");
-      });
-   
-      // Handle option selection
-      options.querySelectorAll(".custom-option").forEach(option => {
-        option.addEventListener("click", (e) => {
-          const value = option.getAttribute("data-value");
-          const text = option.textContent;
-   
-          hiddenInput.value = value;
-          label.textContent = text;
-          options.classList.add("hidden"); // Hide dropdown immediately after selection
-        });
-      });
-    });
-</script>
-
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const wrapper = document.querySelector(".custom-select-wrapper");
-        const trigger = wrapper.querySelector(".custom-select-trigger");
-        const options = document.querySelector("#room-options");
-        const hiddenInput = document.querySelector("#room-select");
-        const label = document.querySelector("#selected-room-label");
-
-
-        // Toggle dropdown visibility
-        trigger.addEventListener("click", (e) => {
-            options.classList.toggle("hidden");
-        });
-
-
-        // Close dropdown if clicking outside
-        document.addEventListener("click", () => {
-            options.classList.add("hidden");
-        });
-
-
-        // Handle option selection
-        options.querySelectorAll(".custom-option").forEach(option => {
-            option.addEventListener("click", (e) => {
-                const value = option.getAttribute("data-value");
-                const text = option.textContent;
-
-
-                hiddenInput.value = value;
-                label.textContent = text;
-                options.classList.add("hidden"); // Hide dropdown immediately after selection
-            });
-        });
-
-
-        // --- Start Time and End Time functionality ---
-        const startTimeSelect = document.getElementById('start-time');
-        const endTimeInput = document.getElementById('end-time');
-       
-
-
-
-
-        // Function to add 1 hour to the start time
-        function updateEndTime() {
-            const startTime = startTimeSelect.value;
-
-
-
-
-            if (startTime) {
-                // Parse the selected time
-                const [hours, minutes] = startTime.split(':').map(num => parseInt(num));
-
-
-                // Create a Date object for the start time
-                const startDate = new Date();
-                startDate.setHours(hours);
-                startDate.setMinutes(minutes);
-                startDate.setSeconds(0);
-
-
-                // Add 1 hour to the start time
-                startDate.setHours(startDate.getHours() + 1);
-
-
-                // Format the new end time
-                const endHours = startDate.getHours().toString().padStart(2, '0');
-                const endMinutes = startDate.getMinutes().toString().padStart(2, '0');
-
-
-                // Update the end time input field
-                endTimeInput.value = `${endHours}:${endMinutes}`;
-            }
-        }
-
+    
 
         // Add event listener to update end time when start time changes
         startTimeSelect.addEventListener('change', updateEndTime);
-    });
+    
 </script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+            const timeSlotsContainer = document.querySelector('.time-slots');
+            const timeSlots = timeSlotsContainer.querySelectorAll('.time-slot');
 
+            timeSlots.forEach(slot => {
+                if (slot.classList.contains('available') || slot.classList.contains('selected')) {
+                    slot.classList.add('clickable'); // Add a 'clickable' class for styling if needed
+                    slot.addEventListener('click', function() {
+                        const previouslySelected = document.querySelector('.time-slot.selected');
+                        if (previouslySelected && previouslySelected !== this) {
+                            previouslySelected.classList.remove('selected');
+                        }
+                        if (!this.classList.contains('reserved')) {
+                            this.classList.toggle('selected');
+                        }
+                    });
+                }
+            });
+        });
+</script>
+<script>
+            document.addEventListener('DOMContentLoaded', function() {
+            const timeSlotsContainer = document.querySelector('.time-slots');
+            const timeSlots = timeSlotsContainer.querySelectorAll('.time-slot');
+            const startTimeInput = document.getElementById('start-time');
+            const endTimeInput = document.getElementById('end-time');
+            let selectedStartTime = startTimeInput.value; // Initialize with the initially selected time
 
+            // Function to format time (add leading zero if needed)
+            function formatTime(hour, minute) {
+                const hourStr = hour < 10 ? '0' + hour : hour;
+                const minuteStr = minute < 10 ? '0' + minute : minute;
+                return `${hourStr}:${minuteStr}`;
+            }
+
+            // Function to calculate and update the end time
+            function updateEndTime(startTime) {
+                if (startTime) {
+                    const [startHourStr, startMinuteStr] = startTime.split(':');
+                    let startHour = parseInt(startHourStr);
+                    const startMinute = parseInt(startMinuteStr);
+                    startHour = (startHour + 1) % 24; // Add one hour, handle wrap-around
+                    endTimeInput.value = formatTime(startHour, startMinute);
+                } else {
+                    endTimeInput.value = '';
+                }
+            }
+
+            // Function to update the displayed start time
+            function updateStartTimeDisplay(time) {
+                startTimeInput.value = time;
+                selectedStartTime = time;
+                updateEndTime(time); // Calculate and update end time
+            }
+
+            timeSlots.forEach(slot => {
+                if (slot.classList.contains('available') || slot.classList.contains('selected')) {
+                    slot.addEventListener('click', function() {
+                        const previouslySelected = document.querySelector('.time-slot.selected');
+                        if (previouslySelected && previouslySelected !== this) {
+                            previouslySelected.classList.remove('selected');
+                        }
+                        if (!this.classList.contains('reserved')) {
+                            this.classList.add('selected');
+                            updateStartTimeDisplay(this.dataset.time);
+                        }
+                    });
+                } else if (slot.classList.contains('selected')) {
+                    // Ensure the initially selected time and end time are displayed
+                    updateStartTimeDisplay(slot.dataset.time);
+                }
+            });
+
+            // Initialize end time on page load
+            updateEndTime(startTimeInput.value);
+        });
+
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const submitReservationButton = document.getElementById('submit-reservation');
+    const reservationModal = document.getElementById('reservation-modal');
+    const closeModalButton = reservationModal.querySelector('.close-button');
+    const confirmButton = document.getElementById('confirm-button');
+    const cancelButton = document.getElementById('cancel-button');
+    const modalDate = document.getElementById('modal-date');
+    const modalTime = document.getElementById('modal-time');
+    const modalProgram = document.getElementById('modal-program');
+    const modalNumStudents = document.getElementById('modal-num-students');
+    const modalStudentsList = document.getElementById('modal-students-list');
+    const selectedDateText = document.getElementById('selected-date-text');
+    const selectedProgramInput = document.getElementById('selected-program');
+    const numStudentsSelect = document.getElementById('num-students');
+    const studentForm = document.getElementById('student-form');
+    const startTimeInput = document.getElementById('start-time');
+
+    submitReservationButton.addEventListener('click', function() {
+        const selectedDate = selectedDateText.textContent;
+        const selectedTime = startTimeInput.value;
+        const program = selectedProgramInput.value;
+        const numStudents = numStudentsSelect.value;
+        const studentDetails = [];
+        const nameInputs = studentForm.querySelectorAll('input[name^="student-name-"]');
+        const idInputs = studentForm.querySelectorAll('input[name^="student-id-"]');
+
+        if (!selectedDate || !selectedTime || !program || !numStudents) {
+            alert('Please select a date, time, program, and number of students.');
+            return;
+        }
+
+        nameInputs.forEach((nameInput, index) => {
+            const idInput = idInputs[index];
+            if (nameInput.value && idInput.value) {
+                studentDetails.push({ name: nameInput.value, id: idInput.value });
+            }
+        });
+
+        modalDate.textContent = selectedDate;
+        modalTime.textContent = selectedTime;
+        modalProgram.textContent = program;
+        modalNumStudents.textContent = numStudents;
+
+        if (studentDetails.length > 0) {
+            let tableHTML = '<h2 style="color:#1852AC; font-weight: bold;">Student Details:</h2><table><thead><tr><th>Name</th><th>Student ID</th></tr></thead><tbody>';
+            studentDetails.forEach(student => {
+                tableHTML += `<tr><td>${student.name}</td><td>${student.id}</td></tr>`;
+            });
+            tableHTML += '</tbody></table>';
+            modalStudentsList.innerHTML = tableHTML;
+        } else {
+            modalStudentsList.innerHTML = '';
+        }
+
+        reservationModal.style.display = 'block';
+    });
+
+    closeModalButton.addEventListener('click', function() {
+        reservationModal.style.display = 'none';
+    });
+
+    cancelButton.addEventListener('click', function() {
+        reservationModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target == reservationModal) {
+            reservationModal.style.display = 'none';
+        }
+    });
+
+    confirmButton.addEventListener('click', function() {
+        // Here you would typically send the reservation data to the server
+        const selectedDate = modalDate.textContent;
+        const selectedTime = modalTime.textContent;
+        const program = modalProgram.textContent;
+        const numStudents = modalNumStudents.textContent;
+        const studentDetails = [];
+        const nameInputs = studentForm.querySelectorAll('input[name^="student-name-"]');
+        const idInputs = studentForm.querySelectorAll('input[name^="student-id-"]');
+
+        nameInputs.forEach((nameInput, index) => {
+            const idInput = idInputs[index];
+            if (nameInput.value && idInput.value) {
+                studentDetails.push({ name: nameInput.value, id: idInput.value });
+            }
+        });
+
+        const reservationData = {
+            date: selectedDate,
+            time: selectedTime,
+            program: program,
+            numStudents: numStudents,
+            students: studentDetails
+            // Add other relevant data if needed (e.g., reason)
+        };
+
+        console.log('Reservation Data:', reservationData);
+        alert('Reservation submitted!'); // Replace with actual submission logic
+        reservationModal.style.display = 'none';
+    });
+
+    // Dynamically add student name and ID fields based on the number of students selected
+    numStudentsSelect.addEventListener('change', function() {
+        const num = parseInt(this.value);
+        const studentsContainer = document.getElementById('students-container');
+        studentsContainer.innerHTML = ''; // Clear previous fields
+
+        for (let i = 0; i < num; i++) {
+            const studentDiv = document.createElement('div');
+            studentDiv.classList.add('form-group');
+
+            const nameLabel = document.createElement('label');
+            nameLabel.classList.add('custom-label');
+            nameLabel.textContent = `Student ${i + 1} Name`;
+            const nameInput = document.createElement('input');
+            nameInput.type = 'text';
+            nameInput.name = `student-name-${i + 1}`;
+            nameInput.classList.add('custom-input');
+            nameInput.placeholder = 'Enter name';
+
+            const idLabel = document.createElement('label');
+            idLabel.classList.add('custom-label');
+            idLabel.textContent = `Student ${i + 1} ID`;
+            const idInput = document.createElement('input');
+            idInput.type = 'text';
+            idInput.name = `student-id-${i + 1}`;
+            idInput.classList.add('custom-input');
+            idInput.placeholder = 'Enter student ID';
+
+            studentDiv.appendChild(nameLabel);
+            studentDiv.appendChild(nameInput);
+            studentDiv.appendChild(idLabel);
+            studentDiv.appendChild(idInput);
+            studentsContainer.appendChild(studentDiv);
+        }
+    });
+
+    // Handle program selection
+    const programButtons = document.querySelectorAll('.program-btn');
+    programButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            programButtons.forEach(btn => btn.classList.remove('selected'));
+            this.classList.add('selected');
+            selectedProgramInput.value = this.getAttribute('data-program');
+        });
+    });
+
+    // Basic styling for selected program button
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .program-btn.selected {
+            background-color: #007bff;
+            color: white;
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Basic styling for error messages (you might have this in your CSS)
+    const errorStyle = document.createElement('style');
+    errorStyle.innerHTML = `
+        .error-message {
+            color: red;
+            font-size: 0.8em;
+            margin-top: 5px;
+        }
+    `;
+    document.head.appendChild(errorStyle);
+});
+</script>
 
 
 
