@@ -1,3 +1,4 @@
+
 const monthNameEl = document.getElementById("month-name");
 const daysGridEl = document.getElementById("days-grid");
 const prevMonthBtn = document.getElementById("prev-month");
@@ -359,4 +360,26 @@ document.addEventListener('click', (event) => {
                     alert('Please select a start time.');
                 }
             });
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const timeSlotsContainer = document.querySelector('.time-slots');
+                const timeSlots = timeSlotsContainer.querySelectorAll('.time-slot');
+    
+                timeSlots.forEach(slot => {
+                    if (slot.classList.contains('available') || slot.classList.contains('selected')) {
+                        slot.classList.add('clickable'); // Add a 'clickable' class for styling if needed
+                        slot.addEventListener('click', function() {
+                            const previouslySelected = document.querySelector('.time-slot.selected');
+                            if (previouslySelected && previouslySelected !== this) {
+                                previouslySelected.classList.remove('selected');
+                            }
+                            if (!this.classList.contains('reserved')) {
+                                this.classList.toggle('selected');
+                            }
+                        });
+                    }
+                });
+            });
+
+
    
