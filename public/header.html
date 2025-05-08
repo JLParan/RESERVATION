@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Header with Profile Menu</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-
   <style>
     * {
       margin: 0;
@@ -14,7 +12,7 @@
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: Arial, sans-serif;
     }
 
     header {
@@ -84,6 +82,7 @@
       background-color: #2862BA;
     }
 
+    /* PROFILE MENU */
     .profile-menu {
       width: 280px;
       border: 1px solid #ddd;
@@ -93,7 +92,7 @@
       top: 60px;
       right: 20px;
       background-color: #fff;
-      display: none; 
+      display: none; /* Hidden by default */
       z-index: 100;
     }
 
@@ -117,7 +116,7 @@
     }
 
     .profile-header .info .name {
-      font-weight: 600;
+      font-weight: bold;
       font-size: 16px;
     }
 
@@ -143,7 +142,6 @@
       cursor: pointer;
       border-top: 1px solid #eee;
       transition: background 0.2s;
-      font-family: 'Poppins', sans-serif;
     }
 
     .profile-options button:hover {
@@ -172,7 +170,8 @@
       <a href="#" class="active">Home</a>
       <a href="#">About Us</a>
       <a href="#">Services</a>
-      <a href="#">Contact</a>
+      <a href="#">Book Room</a>
+      <a href="#">Contact Us</a>
     </nav>
   </div>
 
