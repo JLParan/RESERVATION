@@ -744,7 +744,7 @@ a:hover {
     .footer-content {
         flex-direction: column;
         gap: 20px;
-    }
+    } 
     .footer-left, .footer-right {
         align-items: center; /* Center items on smaller screens */
     }
