@@ -7,6 +7,61 @@ body {
   overflow-y: auto;
 }
 
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+    position: relative;
+    margin-bottom: 30px;
+  }
+  
+  .left-section {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .logo-icon {
+    width: 30px;
+    height: 30px;
+    margin-left: 30px;
+    
+  }
+
+  nav {
+    display: flex;
+    gap: 20px;
+  }
+
+  nav a {
+    text-decoration: none;
+    font-size: medium;
+    font-weight: normal;
+    color: #2862BA;
+    position: relative;
+    padding: 5px;
+    transition: all 0.3s ease;
+  }
+
+  nav a.active{
+    color: #EF2D30;
+    text-decoration: none;
+  }
+
+nav a:hover {
+    color: #808080;
+    text-decoration: none;
+  }
+
+
+.logo-container img {
+max-height: 50px;
+}
+
 .carousel {
   height: 550px;
   overflow: hidden;
