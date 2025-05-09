@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">🅻</div>
+      <nav>
+        <a href="#"><img src="#" alt="Home Icon">🏠</a>
+        <a href="#"><img src="#" alt="Menu Icon">📋</a>
+        <a href="#"><img src="#" alt="Calendar Icon">📅</a>
+        <a href="#"><img src="#" alt="Bell Icon">🔔</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <input type="text" placeholder="Search..." class="search" />
+        <div class="profile">
+          <div class="profile-info" onclick="toggleDropdown()">
+            <span class="name">Vienne</span>
+            <span class="role">admin</span>
+            <span class="avatar">👤</span>
+          </div>
+          <div class="dropdown" id="dropdown">
+            <a href="#">Log out</a>
+          </div>
+        </div>
+      </header>
+
+      <div class="date">May 15, 2025, Thursday.</div>
+
+      <h2 class="title">Dashboard</h2>
+      <section class="dashboard">
+        <div class="card bookings">
+          <div class="card-title">Total Bookings</div>
+          <div class="number">22</div>
+        </div>
+
+        <div class="card inbox">
+          <div class="card-title">Inbox Preview</div>
+          <div class="inbox-item">📩 New User Registration! <span class="time">9:52 AM</span></div>
+          <div class="inbox-item">📩 New Reservation Received! <span class="time">9:45 AM</span></div>
+          <div class="inbox-item">📩 New User Registration! <span class="time">9:23 AM</span></div>
+        </div>
+
+        <div class="card reservations">
+          <div class="card-title">Reservations Preview</div>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th><th>Name</th><th>Student No.</th><th>Time-in</th><th>Time-out</th><th>Pax</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>01</td>
+                <td>Carcer, Stefani...</td>
+                <td>23-1844</td>
+                <td>12:00 PM</td>
+                <td>1:00 PM</td>
+                <td>5</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="admin2.js"></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  body {
+    background-color: #f3f3f3;
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 60px;
+    background: #0a4abf;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    gap: 1rem;
+  }
+  
+  .sidebar .logo {
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .sidebar nav a {
+    color: white;
+    font-size: 20px;
+    margin: 1rem 0;
+    text-decoration: none;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 1rem 2rem;
+  }
+  
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .search {
+    padding: 0.5rem;
+    width: 300px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  .profile {
+    position: relative;
+  }
+  
+  .profile-info {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 0.25rem 0.75rem;
+    background: white;
+  }
+  
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 0.5rem;
+  }
+  
+  .dropdown a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 0.25rem 1rem;
+  }
+  
+  .date {
+    text-align: right;
+    color: #555;
+    margin: 0.5rem 0 1rem;
+  }
+  
+  .title {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  .dashboard {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .bookings {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+  }
+  
+  .bookings .number {
+    font-size: 48px;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+  
+  .inbox {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .inbox-item {
+    border-top: 1px solid #eee;
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+  }
+  
+  .inbox-item:first-child {
+    border-top: none;
+  }
+  
+  .time {
+    float: right;
+    color: #888;
+    font-size: 0.8rem;
+  }
+  
+  .reservations {
+    flex: 2;
+    min-width: 400px;
+  }
+  
+  .reservations table {
+    width: 100%;
+    margin-top: 1rem;
+    border-collapse: collapse;
+  }
+  
+  .reservations th,
+  .reservations td {
+    text-align: left;
+    padding: 0.5rem;
+    border-bottom: 1px solid #ddd;
+  }
+  
