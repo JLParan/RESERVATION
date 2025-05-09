@@ -29,12 +29,18 @@ app.get('/admin/notifications', (req, res) => {
 });
 
 // API route to fetch notifications
+// API route to fetch notifications directly from Reservation table
 app.get('/api/notifications', (req, res) => {
     db.all(`
-        SELECT N.notificationID, N.message, N.created_at, R.fullName, R.date
-        FROM Notification N
-        JOIN Reservation R ON N.reservationID = R.reservationID
-        ORDER BY N.created_at DESC
+        SELECT 
+            reservationID, 
+            fullName, 
+            date, 
+            start_time, 
+            end_time, 
+            datetime('now') as created_at
+        FROM Reservation
+        ORDER BY reservationID DESC
     `, (err, rows) => {
         if (err) {
             console.error(err.message);

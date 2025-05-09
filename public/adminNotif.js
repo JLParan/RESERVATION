@@ -15,8 +15,8 @@ async function fetchNotifications() {
 }
 
 function displayNotifications(notifications) {
-    const list = document.getElementById('notificationList'); // ✅ this matches your HTML
-    list.innerHTML = '';  // Clear any previous data
+    const list = document.getElementById('notificationList');
+    list.innerHTML = '';
 
     if (notifications.length === 0) {
         const noNotificationsMessage = document.createElement('li');
@@ -27,15 +27,15 @@ function displayNotifications(notifications) {
 
     notifications.forEach(notification => {
         const listItem = document.createElement('li');
-        listItem.classList.add('notification');  // Add class for styling
+        listItem.classList.add('notification');
 
-        // Format the notification data and append it
         listItem.innerHTML = `
-            <strong>Message:</strong> ${notification.message} <br>
+            <strong>Name:</strong> ${notification.fullName} <br>
             <strong>Date:</strong> ${notification.date} <br>
-            <strong>Created At:</strong> ${notification.created_at} <br>
-            <strong>Full Name:</strong> ${notification.fullName}
+            <strong>Start Time:</strong> ${notification.start_time} <br>
+            <strong>End Time:</strong> ${notification.end_time} <br>
+            <strong>Created At:</strong> ${notification.created_at}
         `;
-        list.appendChild(listItem);  // Append the notification to the list
+        list.appendChild(listItem);
     });
 }
