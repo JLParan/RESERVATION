@@ -214,6 +214,7 @@
                </div>
 </section>
         </div>
+
         <button id="submit-reservation">Submit Reservation →</button>
     </div>
     </div>
@@ -260,19 +261,109 @@
         <p class="copyright">&copy; 2025 QCU. All Rights Reserved.</p>
     </footer>
 
-
-
-
 <script src="reservation.js"></script>
+
+<script>
+    const startTimeSelect = document.getElementById("start-time");
+    if (startTimeSelect) {
+        startTimeSelect.addEventListener('change', updateEndTime);
+    } else {
+        console.error("Element with ID 'start-time-select' not found.");
+    }
+</script>
 
 
 <script>
-    
+  document.addEventListener('DOMContentLoaded', () => {
+    const submitReservationBtn = document.getElementById('submit-reservation');
+    const confirmBtn = document.getElementById('confirm-button');
+    const confirmationModal = document.getElementById('confirmation-modal');
 
-        // Add event listener to update end time when start time changes
-        startTimeSelect.addEventListener('change', updateEndTime);
-    
+    // Handle "Submit Reservation" - just show modal
+    submitReservationBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      // Basic validation (optional)
+      const numStudents = parseInt(document.getElementById('num-students').value);
+      if (!numStudents || isNaN(numStudents)) {
+        alert('Please select number of students.');
+        return;
+      }
+
+      confirmationModal.style.display = 'block'; // Show modal
+    });
+
+    // Handle "Confirm" button in modal
+    confirmBtn.addEventListener('click', async function (e) {
+      e.preventDefault();
+
+      // Prepare data
+      const date = selectedDate ? selectedDate.toISOString().split('T')[0] : '';
+      const program = document.getElementById('program-toggle').value;
+      const numStudents = parseInt(document.getElementById('num-students').value);
+      const start_time = document.getElementById('start-time').value;
+      const end_time = document.getElementById('end-time').value;
+      const reason = document.getElementById('reason').value;
+
+      const nameInputs = document.querySelectorAll('input[name^="student-name-"]');
+      const idInputs = document.querySelectorAll('input[name^="student-id-"]');
+      const students = [];
+
+      nameInputs.forEach((input, index) => {
+        const name = input.value.trim();
+        const id = idInputs[index]?.value.trim();
+        if (name && id) {
+          students.push({ name, id });
+        }
+      });
+
+      if (students.length === 0) {
+        alert("Please enter at least one student.");
+        return;
+      }
+
+      const reservationData = {
+        date,
+        time: `${start_time} - ${end_time}`,
+        program,
+        numStudents,
+        reason,
+        students
+      };
+
+      try {
+        const response = await fetch('http://localhost:3000/confirm-button', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(reservationData)
+        });
+
+        const text = await response.text();
+        if (response.ok) {
+          alert('Reservation submitted successfully!');
+
+          // Clear form fields
+          document.getElementById('selected-date-text').value = '';
+          document.getElementById('program-toggle').value = '';
+          document.getElementById('num-students').value = '';
+          document.getElementById('start-time').value = '';
+          document.getElementById('end-time').value = '';
+          document.getElementById('reason').value = '';
+          nameInputs.forEach(input => input.value = '');
+          idInputs.forEach(input => input.value = '');
+
+          confirmationModal.style.display = 'none'; // Hide modal
+        } else {
+          alert('Submission failed: ' + text);
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Error submitting reservation.');
+      }
+    });
+  });
 </script>
+
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -457,40 +548,50 @@
     });
 
     // Dynamically add student name and ID fields based on the number of students selected
-    numStudentsSelect.addEventListener('change', function() {
-        const num = parseInt(this.value);
-        const studentsContainer = document.getElementById('students-container');
-        studentsContainer.innerHTML = ''; // Clear previous fields
+numStudentsSelect.addEventListener('change', function() {
+    const num = parseInt(this.value);
+    const studentsContainer = document.getElementById('students-container');
+    studentsContainer.innerHTML = ''; // Clear previous fields
 
-        for (let i = 0; i < num; i++) {
-            const studentDiv = document.createElement('div');
-            studentDiv.classList.add('form-group');
+    for (let i = 1; i <= num; i++) { // Start loop at 1, since we want the first student to be "Student 1"
+        const studentDiv = document.createElement('div');
+        studentDiv.classList.add('form-group');
 
-            const nameLabel = document.createElement('label');
-            nameLabel.classList.add('custom-label');
-            nameLabel.textContent = `Student ${i + 1} Name`;
-            const nameInput = document.createElement('input');
-            nameInput.type = 'text';
-            nameInput.name = `student-name-${i + 1}`;
-            nameInput.classList.add('custom-input');
-            nameInput.placeholder = 'Enter name';
+        // Name Label
+        const nameLabel = document.createElement('label');
+        nameLabel.classList.add('custom-label');
+        nameLabel.textContent = `Student ${i} Name`;
 
-            const idLabel = document.createElement('label');
-            idLabel.classList.add('custom-label');
-            idLabel.textContent = `Student ${i + 1} ID`;
-            const idInput = document.createElement('input');
-            idInput.type = 'text';
-            idInput.name = `student-id-${i + 1}`;
-            idInput.classList.add('custom-input');
-            idInput.placeholder = 'Enter student ID';
+        // Name Input
+        const nameInput = document.createElement('input');
+        nameInput.type = 'text';
+        nameInput.name = `student-name-${i}`;
+        nameInput.classList.add('custom-input');
+        nameInput.placeholder = 'Enter name';
 
-            studentDiv.appendChild(nameLabel);
-            studentDiv.appendChild(nameInput);
-            studentDiv.appendChild(idLabel);
-            studentDiv.appendChild(idInput);
-            studentsContainer.appendChild(studentDiv);
-        }
-    });
+        // ID Label
+        const idLabel = document.createElement('label');
+        idLabel.classList.add('custom-label');
+        idLabel.textContent = `Student ${i} ID`;
+
+        // ID Input
+        const idInput = document.createElement('input');
+        idInput.type = 'text';
+        idInput.name = `student-id-${i}`;
+        idInput.classList.add('custom-input');
+        idInput.placeholder = 'Enter student ID';
+
+        // Append the fields to the student div
+        studentDiv.appendChild(nameLabel);
+        studentDiv.appendChild(nameInput);
+        studentDiv.appendChild(idLabel);
+        studentDiv.appendChild(idInput);
+
+        // Add the student div to the container
+        studentsContainer.appendChild(studentDiv);
+    }
+});
+
 
     // Handle program selection
     const programButtons = document.querySelectorAll('.program-btn');
@@ -524,9 +625,6 @@
     document.head.appendChild(errorStyle);
 });
 </script>
-
-
-
 
 
 </body>

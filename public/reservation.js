@@ -9,6 +9,7 @@ const selectedDateContainerEl = document.getElementById("selected-date-container
 
 
 
+
 let currentDate = new Date();
 let selectedDate = null; // Track the selected date
 
@@ -157,7 +158,6 @@ const nameInput = document.getElementById('name');
 const studentIdInput = document.getElementById('student-id');
 const nameError = document.getElementById('name-error');
 const studentIdError = document.getElementById('student-id-error');
-const roomSelect = document.getElementById('room-select');
 const programButtons = document.querySelectorAll('.program-btn');
 const programInput = document.getElementById('selected-program');
 const programError = document.getElementById('program-error');
@@ -263,20 +263,19 @@ form.addEventListener('submit', (event) => {
 
 
 
-if (isNameValid && isStudentIdValid && isProgramValid && selectedDate && roomSelect.value) {
+if (isNameValid && isStudentIdValid && isProgramValid && selectedDate) {
     // continue with submission
 }
 
 
 
 
-    if (isNameValid && isStudentIdValid && selectedDate && roomSelect.value) {
+    if (isNameValid && isStudentIdValid && selectedDate) {
         // Create data to send to the server (Google Form or backend)
         const data = new FormData();
         data.append('entry.1234567890', nameInput.value); // Replace with the actual entry ID for Name
         data.append('entry.0987654321', studentIdInput.value); // Replace with the actual entry ID for Student ID
-        data.append('entry.1122334455', selectedDate.toLocaleDateString()); // Replace with actual entry ID for Date
-        data.append('entry.6677889900', roomSelect.value); // Replace with actual entry ID for Room
+        data.append('entry.1122334455', selectedDate.toLocaleDateString()); // Replace with actual entry ID for Da
 
 
 
@@ -323,7 +322,6 @@ selectTrigger.addEventListener('click', () => {
 selectOptions.addEventListener('click', (event) => {
     if (event.target.classList.contains('custom-option')) {
         const value = event.target.dataset.value;
-        roomSelect.value = value;
         selectTrigger.textContent = event.target.textContent;
         selectWrapper.classList.remove('open');
         selectOptions.style.display = 'none';
@@ -346,20 +344,30 @@ document.addEventListener('click', (event) => {
 });
 
 
-
-
-            submitButton.addEventListener('click', () => {
-                if (startTimeSelect.value) {
-                    const selectedStartTimeDisplay = startTimeSelect.options[startTimeSelect.selectedIndex].textContent;
-                    const endTime = endTimeInput.value;
-                    const participants = participantsInput.value;
-                    const reason = reasonTextarea.value;
-                    alert(`Reservation submitted!\nStart Time: ${selectedStartTimeDisplay}\nEnd Time: ${endTime}\nParticipants: ${participants}\nReason: ${reason}`);
-                    // In a real application, you would send this data to your backend
-                } else {
-                    alert('Please select a start time.');
-                }
-            });
+document.addEventListener("DOMContentLoaded", () => {
+     const startTimeSelect = document.getElementById("start-time-select"); // Ensure this ID matches your HTML
+    if (startTimeSelect) {
+        const submitButton = document.getElementById("submit");
+          if (submitButton) {
+    submitButton.addEventListener('click', () => {
+        if (startTimeSelect.value) {
+            const selectedStartTimeDisplay = startTimeSelect.options[startTimeSelect.selectedIndex].textContent;
+            const endTime = endTimeInput.value;
+            const participants = parseInt(participantsInput.value);
+            const reason = reasonTextarea.value;
+            alert(`Reservation submitted!\nStart Time: ${selectedStartTimeDisplay}\nEnd Time: ${endTime}\nParticipants: ${participants}\nReason: ${reason}`);
+            // In a real application, you would send this data to your backend
+        } else {
+            alert('Please select a start time.');
+        }
+    });
+} else {
+    console.error("Submit button not found");
+}
+} else {
+        console.error("Start time select not found");
+    }
+});
 
             document.addEventListener('DOMContentLoaded', function() {
                 const timeSlotsContainer = document.querySelector('.time-slots');

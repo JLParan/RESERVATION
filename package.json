@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "reservation.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -17,9 +18,11 @@
   },
   "homepage": "https://github.com/JLParan/RESERVATION#readme",
   "dependencies": {
+    "body-parser": "^2.2.0",
     "cors": "^2.8.5",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
+    "path-to-regexp": "^6.2.0",
     "sqlite3": "^5.1.7"
   },
   "description": ""
